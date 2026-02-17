@@ -1,5 +1,6 @@
 import '../styles/Login.less'
 import { useState } from 'react'
+import { Toast } from 'antd-mobile';
 
 export default function Login() {
     const [loading, setLoading] = useState(false);
@@ -13,9 +14,25 @@ export default function Login() {
         const phoneRegex = /^1[3-9]\d{9}$/;
         const majorChineseEmailRegex = /^[a-zA-Z0-9._%+-]+@(?:qq\.com|163\.com|126\.com|sina\.(?:com|cn)|sohu\.com|yeah\.net|gmail\.com|hotmail\.com|outlook\.com|foxmail\.com|aliyun\.com)$/i;
         if (!phoneRegex.test(phone) && !majorChineseEmailRegex.test(phone)) {
-            alert('请输入正确的账号');
+            Toast.show({
+                icon: 'fail',
+                content: '请输入正确的账号'
+            })
             return;
         }
+
+        // 向后端发请求
+        fetch('http://localhost:3000/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                phone,
+                password
+            })
+        })
+        console.log(res);
     }
 
     return (
