@@ -12,6 +12,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@koa/cors": "^5.0.0",
     "bcrypt": "^6.0.0",
     "jsonwebtoken": "^9.0.3",
     "koa": "^3.1.1",

@@ -1,11 +1,13 @@
 import '../styles/Login.less'
 import { useState } from 'react'
 import { Toast } from 'antd-mobile';
+// import axios from 'axios';
+import axios from '../Http/index.js';
 
 export default function Login() {
     const [loading, setLoading] = useState(false);
-    const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
+    const [phone, setPhone] = useState('18679460523');
+    const [password, setPassword] = useState('123');
     
     const handleSubmit = async (e) => {
         e.preventDefault(); // 阻止表单默认提交行为
@@ -22,15 +24,39 @@ export default function Login() {
         }
 
         // 向后端发请求
-        fetch('http://localhost:3000/auth/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                phone,
-                password
-            })
+
+        // fetch 方法
+        // const res = await fetch('http://localhost:3000/api/auth/login', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         phone,
+        //         password
+        //     })
+        // })
+
+        // console.log(res);
+        // const data = await res.data;
+        // console.log(data);
+
+        // if (data.token) {
+        //     Toast.show({
+        //         icon: 'success',
+        //         content: data.message
+        //     })
+        // } else {
+        //     Toast.show({
+        //         icon: 'fail',
+        //         content: data.message
+        //     })
+        // }
+
+        // axios 方法
+        const res = await axios.post('http://localhost:3000/api/auth/login', {
+            phone,
+            password
         })
         console.log(res);
     }
