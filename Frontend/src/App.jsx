@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Login from './Pages/Login.jsx'
 import Register from './Pages/Register.jsx'
 import './Styles/App.less'
+import Home from './Pages/Home.jsx'
 
 // 登录和注册页面组件   
 const AuthPage = () => {
@@ -75,7 +76,8 @@ export default function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/login" element={<AuthPage />} />
+                <Route path='/login' element={<AuthPage />}></Route>
+                <Route path='/' element={<Home />}></Route>
             </Routes>
         </BrowserRouter>
     )

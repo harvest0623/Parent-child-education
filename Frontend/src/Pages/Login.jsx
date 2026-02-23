@@ -1,13 +1,15 @@
 import '../styles/Login.less'
 import { useState } from 'react'
-import { Toast } from 'antd-mobile';
-// import axios from 'axios';
-import axios from '../Http/index.js';
+import { Toast } from 'antd-mobile'
+// import axios from 'axios'
+import axios from '../Http/index.js'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
     const [loading, setLoading] = useState(false);
     const [phone, setPhone] = useState('18679460523');
     const [password, setPassword] = useState('123');
+    const navigate = useNavigate();
     
     const handleSubmit = async (e) => {
         e.preventDefault(); // 阻止表单默认提交行为
@@ -54,11 +56,13 @@ export default function Login() {
         // }
 
         // axios 方法
-        const res = await axios.post('http://localhost:3000/api/auth/login', {
+        const res = await axios.post('/api/auth/login', {
             phone,
             password
         })
         console.log(res);
+        localStorage.setItem('token', res.data.token); // 登录成功后，将 token 存储到 localStorage 中
+        navigate('/');
     }
 
     return (
