@@ -1,7 +1,9 @@
 const { findUserByPhone } = require('../Models/userModel.js');
+const { generateCaptcha } = require('../Utils/captcha.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+// 登录
 async function login(ctx) { 
     // 解析请求体中的账号密码
     // console.log(ctx.request.body);
@@ -51,6 +53,26 @@ async function login(ctx) {
     }
 }
 
+// 生成图形验证码
+function getCaptcha(ctx) {
+    try {
+        const captcha = generateCaptcha();
+        ctx.body = {
+            captchaId: captcha.id,
+            captchaSvg: captcha.svg,
+            code: 1
+        }
+    } catch (error) {
+        ctx.status = 500;
+        ctx.body = {
+            message: '生成验证码失败',
+            code: 0,
+            error: error.message
+        }
+    }
+}
+
 module.exports = {
-    login
+    login,
+    getCaptcha
 }
