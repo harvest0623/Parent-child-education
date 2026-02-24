@@ -8,6 +8,14 @@ import Home from './Pages/Home.jsx'
 // 登录和注册页面组件   
 const AuthPage = () => {
     const [activeTab, setActiveTab] = useState('login');
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+
+    const changeActiveTab = (tab, { phone, password }) => {
+        setActiveTab(tab);
+        setPhone(phone);
+        setPassword(password);
+    }
 
     return (
         <div className="app-root">
@@ -32,7 +40,7 @@ const AuthPage = () => {
                     {/* 登录模块 */}
 
                     {
-                        activeTab === 'login' ? <Login></Login> : <Register></Register>
+                        activeTab === 'login' ? <Login user={{ phone, password }}></Login> : <Register changeActiveTab={changeActiveTab}></Register>
                     }
 
                     <div className="social-login">

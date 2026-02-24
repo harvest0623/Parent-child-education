@@ -1,5 +1,5 @@
-const { findUserByPhone } = require('../Models/userModel.js');
-const { generateCaptcha } = require('../Utils/captcha.js');
+const { findUserByPhone, createUser } = require('../Models/userModel.js');
+const { generateCaptcha, verifyCaptcha } = require('../Utils/captcha.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -72,7 +72,73 @@ function getCaptcha(ctx) {
     }
 }
 
+// 注册
+async function register(ctx) {
+    const { nickname, phone, captchaId, captchaCode, password } = ctx.request.body;
+    
+    // 校验账号密码和昵称是否为空
+    if (!nickname || !phone || !captchaId || !captchaCode || !password) {
+        ctx.status = 400;
+        ctx.body = {
+            message: '账号密码和昵称都不能为空',
+            code: 0
+        };
+        return;
+    }
+
+    // 验证图形验证码
+    if (!captchaId || !captchaCode) {
+        ctx.status = 400;
+        ctx.body = {
+            message: '请输入验证码',
+            code: 0
+        };
+        return;
+    }
+
+    const captchaResult = verifyCaptcha(captchaId, captchaCode);
+    if (!captchaResult.valid) {
+        ctx.status = 400;
+        ctx.body = {
+            message: captchaResult.message,
+            code: 0
+        }
+        return;
+    }
+
+    // 判断数据库中账号是否已存在
+    const existed = await findUserByPhone(phone);
+    if (existed) {
+        ctx.status = 400;
+        ctx.body = {
+            message: '账号已存在',
+            code: 0
+        }
+        return;
+    }
+
+    // 加密密码
+    const passwordHash = await bcrypt.hash(password, 10);
+
+    // 写入数据库
+    try {
+        const user = await createUser({ phone, passwordHash, nickname });
+        ctx.body = {
+            message: '注册成功',
+            user: user,
+            code: 1
+        }
+    } catch (error) {
+        ctx.status = 500;   
+        ctx.body = {
+            message: '服务器异常',
+            code: 0
+        }
+    }
+}
+
 module.exports = {
     login,
-    getCaptcha
+    getCaptcha,
+    register
 }

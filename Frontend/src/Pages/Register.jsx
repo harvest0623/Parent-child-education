@@ -3,7 +3,7 @@ import '../Styles/Register.less'
 import axios from '../Http/index.js'
 import { Toast } from 'antd-mobile'
 
-export default function Register() {
+export default function Register({ changeActiveTab }) {
     const [nickname, setNickname] = useState('');
     const [phone, setPhone] = useState('');
     const [captchaCode, setCaptchaCode] = useState('');
@@ -55,7 +55,14 @@ export default function Register() {
             password,
             captchaId
         })
-        console.log(res);
+        // console.log(res);
+
+        Toast.show({
+            content: res.data.message,
+            icon: 'success'
+        })
+
+        changeActiveTab('login', { phone, password });
     }
 
     return (

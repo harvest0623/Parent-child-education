@@ -5,10 +5,10 @@ import { Toast } from 'antd-mobile'
 import axios from '../Http/index.js'
 import { useNavigate } from 'react-router-dom'
 
-export default function Login() {
+export default function Login({ user }) {
     const [loading, setLoading] = useState(false);
-    const [phone, setPhone] = useState('18679460523');
-    const [password, setPassword] = useState('123');
+    const [phone, setPhone] = useState(user.phone || '');
+    const [password, setPassword] = useState(user.password || '');
     const navigate = useNavigate();
     
     const handleSubmit = async (e) => {

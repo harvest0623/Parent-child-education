@@ -40,6 +40,26 @@ function generateCaptcha() {
     }
 }
 
+// 核对验证码
+function verifyCaptcha(captchaId, captchaCode) {
+    const stored = captchaStore.get(captchaId);
+    
+    if (!stored) {
+        return { valid: false, message: '验证码已过期' };
+    }
+
+    if (stored.text !== captchaCode.toLocaleLowerCase().trim()) {
+        return { valid: false, message: '验证码错误' };
+    }
+
+    captchaStore.delete(captchaId);
+    return { 
+        valid: true,
+        message: '验证码验证成功' 
+    };
+}
+
 module.exports = {
-    generateCaptcha
+    generateCaptcha,
+    verifyCaptcha
 }
