@@ -1,0 +1,199 @@
+.home-root {
+    padding: 32px 20px 100px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1f1f1f;
+    background: linear-gradient(180deg, #f9fbff 0%, #f6f7fb 40%, #fff 100%);
+
+    .home-hero {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+        box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.06);
+        border-radius: 20px;
+        background: radial-gradient(circle at 20% 20%, #fef3e6 0, transparent 35%),
+            radial-gradient(circle at 90% 10%, #e6f7ff 0, transparent 40%),
+            #fff;
+
+        &__eyebrow {
+            font-size: 0.35rem;
+            color: #ff7a45;
+            font-weight: 600;
+        }
+
+        h1 {
+            margin: 6px 0 8px 0;
+            font-size: 0.64rem;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        &__sub {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.373rem;
+        }
+
+        &__actions {
+            margin-top: 8px;
+
+            .home-btn--primary {
+                background-color: #ff7a45;
+                color: #fff;
+                box-shadow: 0 8px 20px #ff7a454d;
+                border: none;
+                padding: 10px 16px;
+                font-size: 0.373rem;
+                border-radius: 50px;
+            }
+        }
+
+        &__bubble {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+
+            span {
+                background-color: #f6f6f6;
+                color: #444;
+                padding: 6px 12px;
+                border-radius: 12px;
+                font-size: 0.32rem;
+            }
+        }
+    }
+
+    .home-section {
+        margin-top: 28px;
+    }
+
+    .home-section__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+
+        h2 {
+            margin: 4px 0 2px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    .home-section__eyebrow {
+        margin: 0;
+        font-size: 12px;
+        color: #7c7c7c;
+    }
+
+    .home-section__desc {
+        margin: 4px 0 0;
+        color: #666;
+        font-size: 13px;
+    }
+
+    .home-grid {
+        margin-top: 14px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+    }
+
+    .home-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 16px;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        p {
+            margin: 0;
+            color: #666;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+    }
+
+    .home-card__tag {
+        display: inline-block;
+        background: #fff2e8;
+        color: #ff7a45;
+        border-radius: 10px;
+        padding: 4px 8px;
+        font-size: 12px;
+        width: max-content;
+    }
+
+    .home-recos {
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .home-recos__item {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 16px;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+
+        h3 {
+            margin: 0 0 6px;
+            font-size: 16px;
+        }
+
+        p {
+            margin: 0;
+            color: #666;
+            font-size: 13px;
+        }
+    }
+
+    .home-btn {
+        border: none;
+        border-radius: 999px;
+        padding: 10px 16px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &--primary {
+            background: #ff7a45;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(255, 122, 69, 0.3);
+        }
+
+        &--ghost {
+            background: #fff;
+            color: #444;
+            border: 1px solid #eee;
+        }
+
+        &--text {
+            background: transparent;
+            color: #ff7a45;
+            padding: 8px 0;
+            white-space: nowrap;
+        }
+
+        &--small {
+            background: #f5f5f5;
+            color: #444;
+            padding: 8px 12px;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+    }
+}
