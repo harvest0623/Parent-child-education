@@ -19,7 +19,14 @@ async function createUser({ phone, passwordHash, nickname }) {
     }
 }
 
+// 根据用户ID查询用户
+async function findUserById(id) {
+    const [rows] = await db.execute('SELECT * FROM users WHERE id = ? LIMIT 1', [id]);
+    return rows[0];
+}
+
 module.exports = {
     findUserByPhone,
-    createUser
+    createUser,
+    findUserById
 }
