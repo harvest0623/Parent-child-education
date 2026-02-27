@@ -1,0 +1,64 @@
+.ai-page-root {
+    min-height: 100vh;
+    background-color: #f5f7fa;
+}
+
+.ai-page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 14px;
+        opacity: 0.9;
+    }
+}
+
+.ai-page-content {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ai-feature-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+}
+
+.ai-feature-icon {
+    font-size: 40px;
+    color: #667eea;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.ai-feature-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.ai-feature-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}

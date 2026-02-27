@@ -1,0 +1,80 @@
+.mine-page-root {
+    min-height: calc(100vh - 80px);
+    background-color: #f5f7fa;
+
+    .mine-page-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px 20px 30px;
+        box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            .user-avatar {
+                overflow: hidden;
+                width: 2rem;
+                height: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                
+                .iconfont {
+                    font-size: 1rem;
+                    color: white;
+                }
+            }
+
+            .user-details {
+                flex: 1;
+
+                h2 {
+                    font-size: 0.64rem;
+                    font-weight: 600;
+                    margin-bottom: 4px;
+                }
+
+                p {
+                    font-size: 14px;
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+
+    .mine-page-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .mine-page-card {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            --adm-card-border-radius: 16px;
+        }
+
+        .adm-list-default {
+            --border-top: none;
+            --border-bottom: none;
+
+            .adm-list-item-content-arrow {
+                color: rgba(0, 0, 0, 0.6);
+            }
+        }
+
+        .iconfont {
+            color: #667eea;
+            font-size: 20px;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import ImageCaptureAndProcess from '../Components/ImageCaptureAndProcess/Index.jsx'
-import axios from '../http'
+import axios from '../Http'
 import { Toast } from 'antd-mobile'
 import { useState } from 'react'
 import RecognitionResult from '../Components/RecognitionResult/Index.jsx'
