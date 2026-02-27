@@ -120,6 +120,7 @@ export default function Index({
         setSelectedImage(null);
         fileInputRef.current.value = null;
     }
+    
     return (
         <div className='image-capture-root'>
             <header className='image-capture-header'>

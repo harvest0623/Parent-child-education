@@ -32,6 +32,8 @@ export default function Recognition() {
             })
 
             Toast.clear();
+            // console.log(res.data);
+            
             setRecognitionResult(res.data);
         } catch (error) {
 
