@@ -3,6 +3,12 @@ const Router = require('koa-router');
 const cors = require('@koa/cors');
 const bodyParser = require('koa-bodyparser');
 const authRoutes = require('./Routes/authRoutes.js');
+const cozeRoutes = require('./Routes/cozeAPI.js');
+const dotenv = require('dotenv');
+
+dotenv.config({
+    path: ['.env.local', '.env']
+})
 
 const app = new Koa();  // 创建 koa 实例
 app.use(cors({
@@ -26,6 +32,7 @@ app
     .use(bodyParser())  // 先让 koa 拥有解析参数的能力
     .use(router.routes(), router.allowedMethods())
     .use(authRoutes.routes(), authRoutes.allowedMethods())
+    .use(cozeRoutes.routes(), cozeRoutes.allowedMethods())
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
