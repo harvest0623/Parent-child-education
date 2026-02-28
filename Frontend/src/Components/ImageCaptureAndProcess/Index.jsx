@@ -40,7 +40,9 @@ export default function Index({
             // 将 file 对象转换成 url
             const imageUrl = URL.createObjectURL(file);
             // console.log(imageUrl);
+
             setSelectedImage(imageUrl);
+
             // ai 识别
             onRecognition(file);
         }
@@ -186,7 +188,9 @@ export default function Index({
                 }
             </main>
 
+            {/* 视频元素 */}
             <video ref={videoRef}/>
+
             {/* 画布，用于绘制视频帧 */}
             <canvas ref={canvasRef} />
         </div>
