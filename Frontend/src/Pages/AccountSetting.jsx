@@ -68,6 +68,7 @@ export default function AccountSetting() {
             fileInputRef.current.value = '';  // 保证下一次上传同一张图也会触发onChange
         } catch (error) {
             // console.log(error);
+            
             Toast.show({
                 content: error.message,
                 duration: 2000,
