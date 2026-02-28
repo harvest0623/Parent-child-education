@@ -1,4 +1,4 @@
-const { findUserByPhone, createUser, findUserById } = require('../Models/userModel.js');
+const { findUserByPhone, createUser, findUserById, updateUserInfo } = require('../Models/userModel.js');
 const { generateCaptcha, verifyCaptcha } = require('../Utils/captcha.js');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -163,9 +163,88 @@ async function getUserInfo(ctx) {
     }
 }
 
+// 更新用户信息
+async function updateUser(ctx) {
+    const id = ctx.userId;
+    const params = ctx.request.body;
+    // console.log(res);
+    try {
+        const res = await updateUserInfo(params, id);
+        if (res.affectedRows) {
+            ctx.body = {
+                message: '更新成功',
+                code: 1
+            }
+        } else {
+            ctx.status = 400;
+            ctx.body = {
+                message: '更新失败',
+                code: 0
+            }
+        }
+    } catch (error) {
+        ctx.status = 500;
+        ctx.body = {
+            message: error.message,
+            code: 0
+        }
+    }
+}
+
+// 更新用户密码
+async function updatePassword(ctx) {
+    const id = ctx.userId;
+    const { oldPassword, newPassword } = ctx.request.body;
+    if (!oldPassword || !newPassword) {
+        ctx.status = 400;
+        ctx.body = {
+            message: '旧密码和新密码都不能为空',
+            code: 0
+        }
+        return;
+    }
+
+    try {
+        const user = await findUserById(id);
+        const ok = await bcrypt.compare(oldPassword, user.password_hash);
+        if (!ok) {
+            ctx.status = 400;
+            ctx.body = {
+                message: '旧密码错误',
+                code: 0
+            }
+            return;
+        }
+        const passwordHash = await bcrypt.hash(newPassword, 10);
+        const res = await updateUserInfo({ password_hash: passwordHash }, id);
+        // console.log(res);
+
+        if (res.affectedRows) {
+            ctx.body = {
+                message: '修改成功',
+                code: 1
+            }
+        } else {
+            ctx.status = 400;
+            ctx.body = {
+                message: '修改失败',
+                code: 0
+            }
+        }
+    } catch (error) {
+        ctx.status = 500;
+        ctx.body = {
+            message: error.message,
+            code: 0
+        }
+    }
+}
+
 module.exports = {
     login,
     getCaptcha,
     register,
-    getUserInfo
+    getUserInfo,
+    updateUser,
+    updatePassword
 }
