@@ -20,6 +20,7 @@ async function login(ctx) {
     // 去数据库中查询是否存在相同的账号密码
     const user = await findUserByPhone(phone);
     // console.log(user);
+    
     if (!user) {
         ctx.status = 400; 
         ctx.body = { 
