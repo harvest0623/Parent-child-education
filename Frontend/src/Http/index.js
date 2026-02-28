@@ -2,8 +2,8 @@ import axios from 'axios'
 import { Toast } from 'antd-mobile';
 
 axios.timeout = 5000;
-axios.defaults.baseURL = 'http://localhost:3000';
-// axios.defaults.baseURL = 'http://47.118.25.23:3000';  // 阿里云服务器
+// axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://47.118.25.23:3000';  // 阿里云服务器
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 // 请求拦截
