@@ -8,6 +8,7 @@ import Home from './Pages/Home.jsx'
 import AIPage from './Pages/AIPage.jsx'
 import MinePage from './Pages/MinePage.jsx'
 import Recognition from './Pages/Recognition.jsx'
+import LearnWords from './Pages/LearnWords.jsx'
 import AccountSetting from './Pages/AccountSetting.jsx'
 import AIChat from './Pages/AIChat.jsx'
 
@@ -99,6 +100,7 @@ export default function App() {
                     <Route path='/ai' element={<AIPage />}></Route>
                     <Route path='/mine' element={<MinePage />}></Route>
                     <Route path='/recognition' element={<Recognition />}></Route>
+                    <Route path='/learn-words' element={<LearnWords />}></Route>
 
                 </Route>
                 <Route path='/accountsetting' element={<AccountSetting />}></Route>

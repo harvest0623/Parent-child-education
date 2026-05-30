@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Index({
     theme = 'default',
+    title = 'AI 拍照识物',
     onRecognition,
     recognitionResult,
     children
@@ -129,7 +130,7 @@ export default function Index({
                 <button className='image-capture-header__back' onClick={() => navigate(-1)}>
                     <i className='iconfont icon-fanhui'></i>
                 </button>
-                <h1>AI 拍照识物</h1>
+                <h1>{title}</h1>
                 <div className="image-capture-header__placeholder"></div>
             </header>
 

@@ -1,0 +1,87 @@
+.learn-words-result {
+    background-color: #fff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #eee;
+
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+        }
+    }
+
+    &__voice {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #e8e8e8;
+        }
+
+        .iconfont {
+            font-size: 20px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__word,
+    &__meaning,
+    &__example {
+        h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            margin: 0 0 8px 0;
+        }
+
+        p {
+            font-size: 16px;
+            color: #333;
+            margin: 0;
+            line-height: 1.5;
+        }
+    }
+
+    &__word {
+        p {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4caf50;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
