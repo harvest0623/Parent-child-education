@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../Styles/Layout.less'
 import { Outlet, useNavigate } from 'react-router-dom'
+import { clearScrollPosition, scrollToTop } from '../Utils/scrollManager.js'
 
 const tabs = [
     { id: 'home', path: '/home', name: '首页', icon: 'icon-shouye', },
@@ -35,7 +36,9 @@ export default function Layout() {
                             className={`bottom-nav__item ${tab.isHightLighted ? 'hightLighted' : ''} ${activeTab === tab.id ? 'active' : ''}`}
                             onClick={() => {
                                 setActiveTab(tab.id);
+                                clearScrollPosition('/home');
                                 navigate(tab.path);
+                                scrollToTop();
                             }}
                         >
                             <div className="bottom-nav__icon-container">

@@ -11,6 +11,8 @@ import Recognition from './Pages/Recognition.jsx'
 import LearnWords from './Pages/LearnWords.jsx'
 import AccountSetting from './Pages/AccountSetting.jsx'
 import AIChat from './Pages/AIChat.jsx'
+import LearnPoem from './Pages/LearnPoem.jsx'
+import Habit from './Pages/Habit.jsx'
 
 // 登录和注册页面组件   
 const AuthPage = () => {
@@ -101,6 +103,8 @@ export default function App() {
                     <Route path='/mine' element={<MinePage />}></Route>
                     <Route path='/recognition' element={<Recognition />}></Route>
                     <Route path='/learn-words' element={<LearnWords />}></Route>
+                    <Route path='/learn-poem' element={<LearnPoem />}></Route>
+                    <Route path='/habit' element={<Habit />}></Route>
 
                 </Route>
                 <Route path='/accountsetting' element={<AccountSetting />}></Route>

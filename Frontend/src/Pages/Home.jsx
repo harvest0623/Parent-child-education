@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Styles/Home.less'
 import HomeCard from '../Components/HomeCard'
+import { restoreScrollPosition } from '../Utils/scrollManager.js'
 
 export default function Home() {
+    useEffect(() => {
+        restoreScrollPosition('/home')
+    }, [])
+
     const quickEntries = [
         { title: '拍照识实物', desc: '秒识身边物品，讲解用途与安全提示', tag: 'AI 识别', path: '/recognition' },
         { title: '拍照学单词', desc: '看图记单词，语音跟读巩固记忆', tag: '英语', path: '/learn-words' },
