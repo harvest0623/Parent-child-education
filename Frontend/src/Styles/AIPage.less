@@ -36,10 +36,31 @@
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
 
-    &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    &.clickable {
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        &:active {
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.ai-feature-arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+
+    i {
+        font-size: 16px;
     }
 }
 

@@ -2,6 +2,7 @@ const axios = require('axios');
 
 // Coze API 基础配置
 const COZE_API_BASE_URL = 'https://38bmgxjghx.coze.site/run';
+const COZE_HOMEWORK_URL = 'https://vjgdp8mm43.coze.site/run';
 
 async function recognition(ctx) {
     const { img } = ctx.request.body;
@@ -104,8 +105,80 @@ async function sleepStory(ctx) {
     }
 }
 
+async function homeworkSearch(ctx) {
+    const { question } = ctx.request.body;
+
+    const params = {
+        question_image: { url: "", file_type: "" },
+        question_text: question || ""
+    };
+
+    try {
+        const res = await axios({
+            method: 'post',
+            url: COZE_HOMEWORK_URL,
+            headers: {
+                'Authorization': `Bearer ${process.env.VITE_COZE_HOMEWORK}`,
+                'Content-Type': 'application/json'
+            },
+            data: params,
+            timeout: 60000
+        });
+
+        ctx.body = {
+            code: 1,
+            data: res.data
+        };
+    } catch (error) {
+        console.error('Coze homeworkSearch error:', error.response?.data || error.message);
+
+        ctx.status = 500;
+        ctx.body = {
+            code: 0,
+            message: error.response?.data?.message || '搜题失败，请重试'
+        };
+    }
+}
+
+async function homeworkAnalyze(ctx) {
+    const { question, subject, image_url } = ctx.request.body;
+
+    const params = {
+        question_image: { url: image_url || "", file_type: image_url ? "image/jpeg" : "" },
+        question_text: question || ""
+    };
+
+    try {
+        const res = await axios({
+            method: 'post',
+            url: COZE_HOMEWORK_URL,
+            headers: {
+                'Authorization': `Bearer ${process.env.VITE_COZE_HOMEWORK}`,
+                'Content-Type': 'application/json'
+            },
+            data: params,
+            timeout: 60000
+        });
+
+        ctx.body = {
+            code: 1,
+            data: res.data
+        };
+    } catch (error) {
+        console.error('Coze homeworkAnalyze error:', error.response?.data || error.message);
+
+        ctx.status = 500;
+        ctx.body = {
+            code: 0,
+            message: error.response?.data?.message || '分析失败，请重试'
+        };
+    }
+}
+
 module.exports = {
     recognition,
     learnWords,
-    sleepStory
+    sleepStory,
+    homeworkSearch,
+    homeworkAnalyze
 }

@@ -15,6 +15,10 @@ import LearnPoem from './Pages/LearnPoem.jsx'
 import Habit from './Pages/Habit.jsx'
 import SleepStory from './Pages/SleepStory.jsx'
 import SciencePage from './Pages/SciencePage.jsx'
+import HomeworkTutor from './Pages/HomeworkTutor.jsx'
+import PhotoSearch from './Pages/PhotoSearch.jsx'
+import QuestionAnalysis from './Pages/QuestionAnalysis.jsx'
+import StudyRecord from './Pages/StudyRecord.jsx'
 
 // 登录和注册页面组件   
 const AuthPage = () => {
@@ -109,6 +113,10 @@ export default function App() {
                     <Route path='/habit' element={<Habit />}></Route>
                     <Route path='/sleep-story' element={<SleepStory />}></Route>
                     <Route path='/science' element={<SciencePage />}></Route>
+                    <Route path='/homework' element={<HomeworkTutor />}></Route>
+                    <Route path='/homework/photo-search' element={<PhotoSearch />}></Route>
+                    <Route path='/homework/question-analysis' element={<QuestionAnalysis />}></Route>
+                    <Route path='/homework/study-record' element={<StudyRecord />}></Route>
 
                 </Route>
                 <Route path='/accountsetting' element={<AccountSetting />}></Route>
