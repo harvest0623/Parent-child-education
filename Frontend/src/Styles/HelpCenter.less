@@ -1,0 +1,184 @@
+.help-center {
+    min-height: 100vh;
+    background-color: #f5f7fa;
+
+    .help-center-content {
+        padding-bottom: 20px;
+    }
+
+    .search-section {
+        padding: 16px;
+        background: white;
+
+        .faq-search {
+            --border-radius: 20px;
+            --background: #f5f7fa;
+            --height: 40px;
+        }
+    }
+
+    .category-section {
+        background: white;
+        padding: 12px 16px;
+        border-bottom: 1px solid #f0f0f0;
+
+        .category-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        .category-tag {
+            flex-shrink: 0;
+            border-radius: 16px;
+            padding: 4px 12px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+
+    .faq-section {
+        padding: 16px;
+
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0;
+            color: #999;
+
+            .iconfont {
+                font-size: 48px;
+                margin-bottom: 16px;
+                color: #ccc;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        .faq-collapse {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+            .adm-collapse-panel {
+                background: white;
+            }
+
+            .adm-collapse-panel-header {
+                padding: 16px;
+                border-bottom: 1px solid #f5f5f5;
+            }
+
+            .adm-collapse-panel-content {
+                padding: 0;
+            }
+
+            .adm-collapse-panel-body {
+                padding: 16px;
+                background: #fafafa;
+            }
+
+            .faq-question {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 15px;
+                color: #333;
+                font-weight: 500;
+
+                .faq-tag {
+                    flex-shrink: 0;
+                    font-size: 11px;
+                    border-radius: 4px;
+                    padding: 2px 6px;
+                }
+            }
+
+            .faq-answer {
+                font-size: 14px;
+                color: #666;
+                line-height: 1.6;
+
+                p {
+                    margin: 0 0 8px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-section {
+        padding: 24px 16px;
+        text-align: center;
+
+        .contact-title {
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .contact-btn,
+        .feedback-btn {
+            flex: 1;
+            max-width: 160px;
+            height: 44px;
+            border-radius: 22px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+
+            .iconfont {
+                font-size: 18px;
+            }
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .feedback-btn {
+            background: white;
+            color: #667eea;
+            border: 1px solid #667eea;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .help-center {
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+}

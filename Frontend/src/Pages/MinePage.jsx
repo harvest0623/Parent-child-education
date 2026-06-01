@@ -81,10 +81,10 @@ export default function MinePage() {
                         <List.Item prefix={<i className="iconfont icon-zhanghao"></i>} onClick={() => { navigate('/AccountSetting') }}>
                             账号设置
                         </List.Item>
-                        <List.Item prefix={<i className="iconfont icon-tongzhishezhi"></i>} onClick={() => { }}>
+                        <List.Item prefix={<i className="iconfont icon-tongzhishezhi"></i>} onClick={() => navigate('/notification-setting')}>
                             通知设置
                         </List.Item>
-                        <List.Item prefix={<i className="iconfont icon-bangzhuzhongxin"></i>} onClick={() => { }}>
+                        <List.Item prefix={<i className="iconfont icon-bangzhuzhongxin"></i>} onClick={() => navigate('/help-center')}>
                             帮助中心
                         </List.Item>
                         <List.Item prefix={<i className="iconfont icon-tuichudenglu"></i>} onClick={handleLogout}>
