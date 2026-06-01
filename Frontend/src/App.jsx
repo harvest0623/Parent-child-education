@@ -19,6 +19,7 @@ import HomeworkTutor from './Pages/HomeworkTutor.jsx'
 import PhotoSearch from './Pages/PhotoSearch.jsx'
 import QuestionAnalysis from './Pages/QuestionAnalysis.jsx'
 import StudyRecord from './Pages/StudyRecord.jsx'
+import VoiceInteraction from './Pages/VoiceInteraction.jsx'
 
 // 登录和注册页面组件   
 const AuthPage = () => {
@@ -117,6 +118,7 @@ export default function App() {
                     <Route path='/homework/photo-search' element={<PhotoSearch />}></Route>
                     <Route path='/homework/question-analysis' element={<QuestionAnalysis />}></Route>
                     <Route path='/homework/study-record' element={<StudyRecord />}></Route>
+                    <Route path='/voice-interaction' element={<VoiceInteraction />}></Route>
 
                 </Route>
                 <Route path='/accountsetting' element={<AccountSetting />}></Route>

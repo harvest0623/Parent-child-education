@@ -22,7 +22,7 @@ export default function AIPage() {
             icon: 'icon-maikefeng-copy',
             title: '语音交互',
             desc: '支持语音输入，更适合孩子使用',
-            path: null
+            path: '/voice-interaction'
         }
     ];
 
