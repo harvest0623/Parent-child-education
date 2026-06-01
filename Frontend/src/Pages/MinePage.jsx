@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from 'react'
 import { List, Card, ActionSheet, ImageViewer, Button } from 'antd-mobile'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import MyContentPage from './MyContentPage'
 
 export default function MinePage() {
     const [visible, setVisible] = useState(false);
@@ -63,10 +64,10 @@ export default function MinePage() {
                 }}
                     title='我的内容' headerStyle={{ height: '60px' }}>
                     <List header={null}>
-                        <List.Item prefix={<i className="iconfont icon-wodeshoucang"></i>} onClick={() => { }}>
+                        <List.Item prefix={<i className="iconfont icon-wodeshoucang"></i>} onClick={() => navigate('/my-content')}>
                             我的收藏
                         </List.Item>
-                        <List.Item prefix={<i className="iconfont icon-liulanlishi"></i>} onClick={() => { }}>
+                        <List.Item prefix={<i className="iconfont icon-liulanlishi"></i>} onClick={() => navigate('/my-content')}>
                             浏览历史
                         </List.Item>
                     </List>

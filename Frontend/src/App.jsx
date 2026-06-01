@@ -20,6 +20,7 @@ import PhotoSearch from './Pages/PhotoSearch.jsx'
 import QuestionAnalysis from './Pages/QuestionAnalysis.jsx'
 import StudyRecord from './Pages/StudyRecord.jsx'
 import VoiceInteraction from './Pages/VoiceInteraction.jsx'
+import MyContentPage from './Pages/MyContentPage.jsx'
 
 // 登录和注册页面组件   
 const AuthPage = () => {
@@ -123,6 +124,7 @@ export default function App() {
                 </Route>
                 <Route path='/accountsetting' element={<AccountSetting />}></Route>
                 <Route path='/aichat' element={<AIChat />}></Route>
+                <Route path='/my-content' element={<MyContentPage />}></Route>
             </Routes>
         </BrowserRouter>
     )
