@@ -1,5 +1,5 @@
 const Router = require('koa-router');
-const { recognition, learnWords } = require('../Controllers/cozeController.js');
+const { recognition, learnWords, sleepStory } = require('../Controllers/cozeController.js');
 
 const router = new Router({
     prefix: '/api/coze'
@@ -10,5 +10,8 @@ router.post('/recognition', recognition)
 
 // 拍照学单词
 router.post('/learn-words', learnWords)
+
+// 睡前故事
+router.post('/sleep-story', sleepStory)
 
 module.exports = router

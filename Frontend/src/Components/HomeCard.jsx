@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { saveScrollPosition } from '../Utils/scrollManager.js'
+import { saveScrollPosition, scrollToTop } from '../Utils/scrollManager.js'
 
 export default function HomeCard({ item }) {
     const navigate = useNavigate();
@@ -13,6 +13,7 @@ export default function HomeCard({ item }) {
                 onClick={() => {
                     saveScrollPosition('/home')
                     navigate(item.path)
+                    scrollToTop()
                 }}
             >进入</button>
         </div>

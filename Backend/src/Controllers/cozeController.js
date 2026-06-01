@@ -66,7 +66,46 @@ async function learnWords(ctx) {
     }
 }
 
+async function sleepStory(ctx) {
+    const { character, character_desc, plot, style, length } = ctx.request.body;
+
+    const params = {
+        character,
+        character_desc,
+        plot,
+        style,
+        length: length || 400
+    };
+
+    try {
+        const res = await axios({
+            method: 'post',
+            url: COZE_API_BASE_URL,
+            headers: {
+                'Authorization': `Bearer ${process.env.VITE_COZE_SLEEP_STORY}`,
+                'Content-Type': 'application/json'
+            },
+            data: params,
+            timeout: 60000
+        });
+
+        ctx.body = {
+            code: 1,
+            data: res.data
+        };
+    } catch (error) {
+        console.error('Coze sleepStory error:', error.response?.data || error.message);
+
+        ctx.status = 500;
+        ctx.body = {
+            code: 0,
+            message: error.response?.data?.message || '生成故事失败，请重试'
+        };
+    }
+}
+
 module.exports = {
     recognition,
-    learnWords
+    learnWords,
+    sleepStory
 }

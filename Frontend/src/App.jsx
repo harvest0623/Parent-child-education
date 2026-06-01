@@ -13,6 +13,8 @@ import AccountSetting from './Pages/AccountSetting.jsx'
 import AIChat from './Pages/AIChat.jsx'
 import LearnPoem from './Pages/LearnPoem.jsx'
 import Habit from './Pages/Habit.jsx'
+import SleepStory from './Pages/SleepStory.jsx'
+import SciencePage from './Pages/SciencePage.jsx'
 
 // 登录和注册页面组件   
 const AuthPage = () => {
@@ -105,6 +107,8 @@ export default function App() {
                     <Route path='/learn-words' element={<LearnWords />}></Route>
                     <Route path='/learn-poem' element={<LearnPoem />}></Route>
                     <Route path='/habit' element={<Habit />}></Route>
+                    <Route path='/sleep-story' element={<SleepStory />}></Route>
+                    <Route path='/science' element={<SciencePage />}></Route>
 
                 </Route>
                 <Route path='/accountsetting' element={<AccountSetting />}></Route>
