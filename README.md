@@ -22,104 +22,133 @@
 <a href="https://lesscss.org/" target="_blank"><img src="https://img.shields.io/badge/Less-4.5.1-1D365D?logo=less&logoColor=1D365D" alt="Less"></a>
 <a href="https://jwt.io/" target="_blank"><img src="https://img.shields.io/badge/JWT-9.0.3-000000?logo=jsonwebtokens&logoColor=000000" alt="JWT"></a>
 
-> **一个专注于 0-12 岁亲子教育的智能陪伴平台**，集成 AI 识物、智能对话、学习启蒙等功能，让科技成为亲子成长的得力助手。家长可以在平台上注册账号，为孩子创建专属的学习环境。
+> **一个专注于 0-12 岁亲子教育的智能陪伴平台**，集成 AI 识物、智能对话、学习启蒙、作业辅导、睡前故事等功能，让科技成为亲子成长的得力助手。家长可以在平台上注册账号，为孩子创建专属的学习环境。
 
 ## ✨ 项目亮点
 
 ### 🎯 智能教育场景
-- **AI 拍照识物**
-  - 支持相册上传和实时拍照两种方式
-  - 图片自动转换为 Base64 格式传输
-  - 调用 Coze 工作流实现图像识别
-  - AI 智能讲解物品用途、安全提示，支持语音朗读
-  
-- **智能对话助手**
-  - 集成 DeepSeek 大语言模型
-  - 支持多轮对话上下文记忆
-  - 专为亲子教育场景优化的系统提示词
-  - 实时流式响应，打字机效果展示
-  
-- **多维度学习模块**
-  - 古诗词天地：每日一诗，图文+朗读
-  - 拍照学单词：看图记单词，语音跟读
-  - 科学小实验：安全材料，动手做实验
-  - 亲子成长任务：每日打卡，习惯养成
+
+#### AI 拍照识物
+- 支持相册上传和实时拍照两种方式
+- 图片自动转换为 Base64 格式传输
+- 调用 Coze 工作流实现图像识别
+- AI 智能讲解物品用途、安全提示，支持语音朗读
+
+#### 智能对话助手
+- 集成 DeepSeek 大语言模型
+- 支持多轮对话上下文记忆
+- 专为亲子教育场景优化的系统提示词
+- 实时流式响应，打字机效果展示
+
+#### 作业辅导系统
+- 拍照搜题：拍照即可获取题目答案和解析
+- 文字搜题：支持手动输入题目内容
+- 分步讲解：AI 提供详细的解题步骤
+- 学习记录：自动保存搜题历史，支持复习巩固
+
+#### 语音交互功能
+- 支持语音输入（浏览器 Web Speech API）
+- 实时语音转文字显示
+- AI 回复支持语音朗读
+- 适合低龄儿童使用场景
+
+#### 睡前故事馆
+- 个性化故事生成：选择角色、情节、风格
+- 多种故事风格：温馨柔和、轻松有趣、寓教于乐、魔法奇幻
+- 可调节故事长度：简短、适中、较长、长篇
+- 支持故事复制和重新生成
+
+#### 科学小实验
+- 丰富的实验库：化学、物理、生物、光学等多个领域
+- 详细的实验步骤：分步指导，安全提示
+- 实验原理讲解：帮助孩子理解科学知识
+- 互动问答：巩固学习成果
 
 ### 📱 移动端优先
-- **rem 响应式布局**
-  - 动态计算根元素字体大小，实现完美适配
-  - 监听窗口 resize 事件，实时响应屏幕变化
-  - 1rem = 屏幕宽度/10，设计稿还原度高
-  
-- **主题切换系统**
-  - 内置 default（橙色主题）和 green（绿色主题）
-  - 主题配置包含主色、次色、加载色、渐变色等
-  - 组件级主题注入，灵活扩展
-  
-- **流畅交互体验**
-  - 精心设计的 CSS 动画与过渡效果
-  - Ant Design Mobile 组件库提供原生般体验
-  - 滑动切换、点击反馈等细节打磨
+
+#### rem 响应式布局
+- 动态计算根元素字体大小，实现完美适配
+- 监听窗口 resize 事件，实时响应屏幕变化
+- 1rem = 屏幕宽度/10，设计稿还原度高
+
+#### 主题切换系统
+- 内置 default（橙色主题）和 green（绿色主题）
+- 主题配置包含主色、次色、加载色、渐变色等
+- 组件级主题注入，灵活扩展
+
+#### 流畅交互体验
+- 精心设计的 CSS 动画与过渡效果
+- Ant Design Mobile 组件库提供原生般体验
+- 滑动切换、点击反馈等细节打磨
 
 ### 🔐 安全可靠
-- **JWT 身份认证**
-  - 登录成功后生成 7 天有效期的 Token
-  - 前端请求拦截器自动携带 Token
-  - 后端中间件验证 Token 合法性
-  - Token 过期自动跳转登录页
-  
-- **密码加密存储**
-  - 使用 bcrypt 进行密码哈希
-  - saltRounds = 10，安全性与性能平衡
-  - 数据库只存储加密后的密码哈希
-  
-- **验证码防护**
-  - SVG 图形验证码，防止暴力破解
-  - 验证码 ID + 验证码内容双重校验
-  - 支持刷新验证码
+
+#### JWT 身份认证
+- 登录成功后生成 7 天有效期的 Token
+- 前端请求拦截器自动携带 Token
+- 后端中间件验证 Token 合法性
+- Token 过期自动跳转登录页
+
+#### 密码加密存储
+- 使用 bcrypt 进行密码哈希
+- saltRounds = 10，安全性与性能平衡
+- 数据库只存储加密后的密码哈希
+
+#### 验证码防护
+- SVG 图形验证码，防止暴力破解
+- 验证码 ID + 验证码内容双重校验
+- 支持刷新验证码
 
 ### 🤖 AI 能力集成
-- **Coze 工作流**
-  - 图像识别工作流，支持物体识别
-  - 返回结构化数据：物品名称、描述、安全提示
-  - 支持语音合成，自动朗读识别结果
-  
-- **DeepSeek 大模型**
-  - 兼容 OpenAI API 格式，接入成本低
-  - 中文理解能力强，适合教育场景
-  - 支持系统提示词定制角色
-  
-- **语音交互能力**
-  - 支持语音输入（浏览器 Web Speech API）
-  - AI 回复支持语音朗读
-  - 适合低龄儿童使用场景
+
+#### Coze 工作流
+- 图像识别工作流，支持物体识别
+- 返回结构化数据：物品名称、描述、安全提示
+- 支持语音合成，自动朗读识别结果
+- 作业辅导工作流：题目识别、答案解析
+
+#### DeepSeek 大模型
+- 兼容 OpenAI API 格式，接入成本低
+- 中文理解能力强，适合教育场景
+- 支持系统提示词定制角色
+
+#### 语音交互能力
+- 支持语音输入（浏览器 Web Speech API）
+- AI 回复支持语音朗读
+- 适合低龄儿童使用场景
 
 ### 🏗️ 架构设计
-- **前后端分离**
-  - 前端 React + Vite，后端 Koa + MySQL
-  - RESTful API 设计，接口规范清晰
-  - 支持跨域请求（CORS）
-  
-- **MVC 分层架构**
-  - Routes 路由层：定义接口地址
-  - Controllers 控制层：处理业务逻辑
-  - Models 模型层：数据库操作封装
-  
-- **统一错误处理**
-  - Axios 响应拦截器统一捕获错误
-  - Toast 提示用户友好的错误信息
-  - HTTP 状态码区分错误类型
+
+#### 前后端分离
+- 前端 React + Vite，后端 Koa + MySQL
+- RESTful API 设计，接口规范清晰
+- 支持跨域请求（CORS）
+
+#### MVC 分层架构
+- Routes 路由层：定义接口地址
+- Controllers 控制层：处理业务逻辑
+- Models 模型层：数据库操作封装
+
+#### 统一错误处理
+- Axios 响应拦截器统一捕获错误
+- Toast 提示用户友好的错误信息
+- HTTP 状态码区分错误类型
 
 ## 🚀 功能特性
 
 | 功能模块 | 描述 |
 |---------|------|
-| 🔐 用户系统 | 登录/注册、JWT 认证、账户管理 |
-| 📸 AI 识物 | 拍照识别物品，AI 智能讲解 |
-| 💬 智能对话 | DeepSeek 驱动的 AI 对话助手 |
+| 🔐 用户系统 | 登录/注册、JWT 认证、账户管理、头像上传、昵称修改、密码修改 |
+| 📸 AI 识物 | 拍照识别物品，AI 智能讲解，支持语音朗读 |
+| 💬 智能对话 | DeepSeek 驱动的 AI 对话助手，支持多轮对话 |
 | 📚 学习启蒙 | 古诗词、英语单词、科学实验 |
 | 📝 成长任务 | 亲子打卡，习惯养成 |
 | 🎨 主题切换 | 多种配色主题，个性化体验 |
+| 📖 睡前故事 | 个性化故事生成，支持角色、情节、风格选择 |
+| 🔬 科学实验 | 丰富的实验库，分步指导，互动问答 |
+| 📷 作业辅导 | 拍照搜题、文字搜题、分步讲解、学习记录 |
+| 🎤 语音交互 | 语音输入、实时转文字、AI 语音朗读 |
+| 📱 个人中心 | 收藏管理、浏览历史、通知设置、帮助中心 |
 
 ## 🛠️ 技术栈
 
@@ -155,19 +184,35 @@ Parent-child-education/
 │   │   ├── Components/          # 公共组件
 │   │   │   ├── ImageCaptureAndProcess/  # 图像拍摄与处理组件
 │   │   │   ├── RecognitionResult/       # 识别结果展示组件
+│   │   │   ├── LearnWordsResult/        # 单词学习结果组件
 │   │   │   └── HomeCard.jsx             # 首页卡片组件
-│   │   ├── Pages/                  # 页面组件
-│   │   │   ├── Login.jsx           # 登录页面
-│   │   │   ├── Register.jsx        # 注册页面
-│   │   │   ├── Home.jsx            # 首页
-│   │   │   ├── AIPage.jsx          # AI 功能页
-│   │   │   ├── AIChat.jsx          # AI 对话页
-│   │   │   ├── Recognition.jsx     # 拍照识别页
-│   │   │   ├── MinePage.jsx        # 个人中心
-│   │   │   └── AccountSetting.jsx  # 账户设置
+│   │   ├── Pages/               # 页面组件
+│   │   │   ├── Login.jsx               # 登录页面
+│   │   │   ├── Register.jsx            # 注册页面
+│   │   │   ├── Home.jsx                # 首页
+│   │   │   ├── AIPage.jsx              # AI 功能页
+│   │   │   ├── AIChat.jsx              # AI 对话页
+│   │   │   ├── Recognition.jsx         # 拍照识别页
+│   │   │   ├── LearnWords.jsx          # 单词学习页
+│   │   │   ├── LearnPoem.jsx           # 古诗词学习页
+│   │   │   ├── SciencePage.jsx         # 科学实验页
+│   │   │   ├── Habit.jsx               # 习惯养成页
+│   │   │   ├── SleepStory.jsx          # 睡前故事页
+│   │   │   ├── HomeworkTutor.jsx       # 作业辅导页
+│   │   │   ├── PhotoSearch.jsx         # 拍照搜题页
+│   │   │   ├── QuestionAnalysis.jsx    # 题目解析页
+│   │   │   ├── StudyRecord.jsx         # 学习记录页
+│   │   │   ├── VoiceInteraction.jsx    # 语音交互页
+│   │   │   ├── MinePage.jsx            # 个人中心
+│   │   │   ├── AccountSetting.jsx      # 账户设置
+│   │   │   ├── MyContentPage.jsx       # 我的内容页
+│   │   │   ├── NotificationSetting.jsx # 通知设置页
+│   │   │   └── HelpCenter.jsx          # 帮助中心页
 │   │   ├── Http/                   # HTTP 请求封装
 │   │   ├── Styles/                 # 样式文件
 │   │   ├── Utils/                  # 工具函数
+│   │   │   ├── rem.js              # rem 适配工具
+│   │   │   └── scrollManager.js    # 滚动管理工具
 │   │   ├── App.jsx                 # 应用入口
 │   │   └── main.jsx                # React 挂载点
 │   ├── public/                     # 静态资源
@@ -688,6 +733,114 @@ export default function Index({ theme = 'default' }) {
 }
 ```
 
+---
+
+### 8. 语音交互实现
+
+使用浏览器 Web Speech API 实现语音输入和语音合成：
+
+```javascript
+// Pages/VoiceInteraction.jsx
+const startRecording = async () => {
+    try {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRecognition) {
+            setError('您的浏览器不支持语音识别，请使用 Chrome 浏览器');
+            return;
+        }
+
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        streamRef.current = stream;
+
+        const recognition = new SpeechRecognition();
+        recognition.lang = 'zh-CN';
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognitionRef.current = recognition;
+
+        recognition.onresult = (event) => {
+            let final = '';
+            let interim = '';
+            for (let i = 0; i < event.results.length; i++) {
+                const transcript = event.results[i][0].transcript;
+                if (event.results[i].isFinal) {
+                    final += transcript;
+                } else {
+                    interim += transcript;
+                }
+            }
+            if (final) finalTranscriptRef.current = final;
+            setInterimText(interim || final);
+        };
+
+        recognition.start();
+        setStatus('recording');
+    } catch (err) {
+        if (err.name === 'NotAllowedError' || err.name === 'NotFoundError') {
+            setError('请允许麦克风权限后重试');
+        } else {
+            setError('无法启动录音功能，请稍后重试');
+        }
+    }
+};
+
+// 语音合成
+const speakText = (text) => {
+    if (!window.speechSynthesis) { setStatus('idle'); return }
+    window.speechSynthesis.cancel()
+    const utterance = new SpeechSynthesisUtterance(text)
+    utterance.lang = 'zh-CN'
+    utterance.rate = 0.9
+    utterance.pitch = 1.1
+    utterance.onend = () => setStatus('idle')
+    utterance.onerror = () => setStatus('idle')
+    setStatus('speaking')
+    window.speechSynthesis.speak(utterance)
+}
+```
+
+---
+
+### 9. 睡前故事生成
+
+个性化故事生成系统，支持角色、情节、风格选择：
+
+```javascript
+// Pages/SleepStory.jsx
+const generateStory = useCallback(async () => {
+    setLoading(true)
+    setError(null)
+
+    try {
+        const plotText = selectedPlot
+            ? PLOTS.find(p => p.id === selectedPlot)?.name
+            : customPlot.trim()
+
+        const params = {
+            character: CHARACTERS.find(c => c.id === selectedCharacter)?.name,
+            character_desc: CHARACTERS.find(c => c.id === selectedCharacter)?.desc,
+            plot: plotText,
+            style: STYLES.find(s => s.id === selectedStyle)?.name,
+            length: storyLength
+        }
+
+        const response = await axios.post('/api/coze/sleep-story', params)
+
+        if (response.data.code === 1) {
+            setStoryResult(response.data.data)
+            setCurrentStep(4)
+        } else {
+            throw new Error(response.data.message || '生成失败')
+        }
+    } catch (err) {
+        console.error('生成故事失败:', err)
+        setError(err.message || '生成故事时出现错误，请重试')
+    } finally {
+        setLoading(false)
+    }
+}, [selectedCharacter, selectedPlot, customPlot, selectedStyle, storyLength])
+```
+
 ## 🧩 开发指南
 
 ### 添加新页面
@@ -724,6 +877,7 @@ class UserModel {
 - `react-router-dom`：路由管理
 - `antd-mobile`：移动端组件库
 - `axios`：HTTP 请求
+- `dayjs`：日期处理库
 
 ### 后端生产依赖
 
@@ -733,6 +887,27 @@ class UserModel {
 - `bcrypt`：密码加密
 - `svg-captcha`：验证码生成
 - `@koa/cors`：跨域处理
+
+## 🔄 版本兼容性
+
+### 浏览器兼容性
+
+- **推荐浏览器**：Chrome 90+、Edge 90+、Safari 14+
+- **语音功能**：需要浏览器支持 Web Speech API（Chrome 33+）
+- **摄像头功能**：需要浏览器支持 MediaDevices API（Chrome 53+）
+
+### 移动端兼容性
+
+- **iOS**：Safari 14+、Chrome 90+
+- **Android**：Chrome 90+、系统 WebView 90+
+
+### 功能降级说明
+
+| 功能 | 最低要求 | 降级方案 |
+|------|----------|----------|
+| 语音识别 | Chrome 33+ | 不支持时显示提示，建议使用 Chrome |
+| 摄像头拍照 | Chrome 53+ | 仅支持相册上传 |
+| 语音合成 | 现代浏览器 | 不支持时静默，不显示朗读按钮 |
 
 ## 🤝 贡献指南
 
