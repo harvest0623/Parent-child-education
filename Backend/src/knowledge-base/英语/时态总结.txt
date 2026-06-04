@@ -1,0 +1,219 @@
+# 英语时态总结
+
+## 一、一般现在时
+
+### 1. 定义
+表示经常发生的动作或存在的状态。
+
+### 2. 构成
+- **肯定句**：主语 + 动词原形（第三人称单数加s/es）
+- **否定句**：主语 + don't/doesn't + 动词原形
+- **一般疑问句**：Do/Does + 主语 + 动词原形？
+
+### 3. 用法
+- 表示经常性或习惯性的动作
+  - I go to school every day.
+  - He plays football every afternoon.
+  
+- 表示客观事实或真理
+  - The earth goes around the sun.
+  - Water boils at 100°C.
+  
+- 表示现在的状态
+  - She is a teacher.
+  - I like apples.
+
+### 4. 时间标志词
+always, usually, often, sometimes, every day, every week, on Sundays
+
+## 二、一般过去时
+
+### 1. 定义
+表示过去某个时间发生的动作或存在的状态。
+
+### 2. 构成
+- **肯定句**：主语 + 动词过去式
+- **否定句**：主语 + didn't + 动词原形
+- **一般疑问句**：Did + 主语 + 动词原形？
+
+### 3. 用法
+- 表示过去某个时间发生的动作
+  - I watched TV last night.
+  - She went to Beijing yesterday.
+  
+- 表示过去存在的状态
+  - He was a student ten years ago.
+
+### 4. 时间标志词
+yesterday, last week, last month, last year, ago, in 2020, just now
+
+### 5. 动词过去式变化规则
+- 一般加ed：play → played
+- 以e结尾加d：like → liked
+- 辅音字母+y结尾，变y为i加ed：study → studied
+- 重读闭音节双写末尾辅音加ed：stop → stopped
+
+## 三、一般将来时
+
+### 1. 定义
+表示将要发生的动作或存在的状态。
+
+### 2. 构成
+- **will + 动词原形**
+  - I will go to the park tomorrow.
+  - She will come back next week.
+  
+- **be going to + 动词原形**
+  - I am going to visit my grandparents this weekend.
+  - It is going to rain.
+
+### 3. 用法
+- will表示临时决定或预测
+  - I'm tired. I will go to bed.
+  - I think it will rain tomorrow.
+  
+- be going to表示计划或有迹象表明要发生
+  - I am going to have a party tonight.
+  - Look at the clouds. It is going to rain.
+
+### 4. 时间标志词
+tomorrow, next week, next month, next year, soon, in the future
+
+## 四、现在进行时
+
+### 1. 定义
+表示现在正在进行的动作。
+
+### 2. 构成
+- **肯定句**：主语 + am/is/are + 动词ing
+- **否定句**：主语 + am/is/are + not + 动词ing
+- **一般疑问句**：Am/Is/Are + 主语 + 动词ing？
+
+### 3. 用法
+- 表示现在正在进行的动作
+  - I am reading a book now.
+  - They are playing basketball.
+  
+- 表示当前一段时间内的活动
+  - I am learning English this term.
+  
+- 表示即将发生的动作（go, come, leave等）
+  - He is coming tomorrow.
+
+### 4. 时间标志词
+now, at the moment, look, listen
+
+### 5. 动词ing变化规则
+- 一般加ing：play → playing
+- 以e结尾去e加ing：make → making
+- 重读闭音节双写末尾辅音加ing：run → running
+- 以ie结尾变ie为y加ing：die → dying
+
+## 五、过去进行时
+
+### 1. 定义
+表示过去某个时间正在进行的动作。
+
+### 2. 构成
+- **肯定句**：主语 + was/were + 动词ing
+- **否定句**：主语 + was/were + not + 动词ing
+- **一般疑问句**：Was/Were + 主语 + 动词ing？
+
+### 3. 用法
+- 表示过去某个时间正在进行的动作
+  - I was watching TV at 8 o'clock last night.
+  - They were having dinner when I called.
+  
+- 表示过去某个时间段内持续进行的动作
+  - It was raining all day yesterday.
+
+### 4. 时间标志词
+at that time, at 8:00 last night, when, while
+
+## 六、现在完成时
+
+### 1. 定义
+表示过去发生的动作对现在造成的影响或结果，或从过去持续到现在的动作。
+
+### 2. 构成
+- **肯定句**：主语 + have/has + 动词过去分词
+- **否定句**：主语 + have/has + not + 动词过去分词
+- **一般疑问句**：Have/Has + 主语 + 动词过去分词？
+
+### 3. 用法
+- 表示过去发生的动作对现在造成的影响
+  - I have lost my key. (我现在没有钥匙)
+  - She has gone to Beijing. (她现在不在这里)
+  
+- 表示从过去持续到现在的动作
+  - I have lived here for ten years.
+  - She has been a teacher since 2010.
+
+### 4. 时间标志词
+already, yet, just, ever, never, since, for, so far, recently
+
+### 5. 动词过去分词变化规则
+- 规则变化与过去式相同
+- 不规则变化需要记忆：
+  - go → went → gone
+  - do → did → done
+  - see → saw → seen
+  - take → took → taken
+
+## 七、过去完成时
+
+### 1. 定义
+表示过去某个时间或动作之前已经发生的动作（过去的过去）。
+
+### 2. 构成
+- **肯定句**：主语 + had + 动词过去分词
+- **否定句**：主语 + had + not + 动词过去分词
+- **一般疑问句**：Had + 主语 + 动词过去分词？
+
+### 3. 用法
+- 表示过去某个时间之前已经完成的动作
+  - By the time I arrived, the train had left.
+  - She had finished her homework before her mother came back.
+
+### 4. 时间标志词
+by, before, after, when, by the time
+
+## 八、时态比较
+
+### 1. 一般现在时 vs 现在进行时
+- 一般现在时：表示经常性、习惯性动作
+  - I read books every day.
+- 现在进行时：表示正在进行的动作
+  - I am reading a book now.
+
+### 2. 一般过去时 vs 过去进行时
+- 一般过去时：表示过去完成的动作
+  - I watched TV last night.
+- 过去进行时：表示过去正在进行的动作
+  - I was watching TV at 8 o'clock last night.
+
+### 3. 一般过去时 vs 现在完成时
+- 一般过去时：强调过去的时间
+  - I went to Beijing last year.
+- 现在完成时：强调对现在的影响
+  - I have been to Beijing. (我去过北京，现在不在北京)
+
+## 九、易错点
+
+### 1. 瞬间动词与持续性动词
+- 瞬间动词不能与for/since连用
+  - 错误：I have bought this book for two years.
+  - 正确：I have had this book for two years.
+  - 正确：I bought this book two years ago.
+
+### 2. have been to vs have gone to
+- have been to：去过某地（已回来）
+  - I have been to Beijing twice.
+- have gone to：去了某地（还没回来）
+  - He has gone to Beijing. (他去北京了，还没回来)
+
+### 3. since与for的区别
+- since + 时间点
+  - I have lived here since 2010.
+- for + 时间段
+  - I have lived here for ten years.

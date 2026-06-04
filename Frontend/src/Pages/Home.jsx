@@ -1,11 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Styles/Home.less'
 import HomeCard from '../Components/HomeCard'
 import { restoreScrollPosition } from '../Utils/scrollManager.js'
+import Skeleton from '../Components/Skeleton.jsx'
 
 export default function Home() {
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         restoreScrollPosition('/home')
+        
+        // 模拟加载延迟
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 500);
+        
+        return () => clearTimeout(timer);
     }, [])
 
     const quickEntries = [
@@ -52,11 +62,19 @@ export default function Home() {
                     <button className="home-btn home-btn--text">查看全部</button>
                 </div>
 
-                <div className="home-grid">
-                    {
-                        quickEntries.map((item) => <HomeCard item={item} key={item.tag} />)
-                    }
-                </div>
+                {loading ? (
+                    <div className="home-grid">
+                        {Array.from({ length: 6 }).map((_, index) => (
+                            <Skeleton key={index} type="card" />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="home-grid">
+                        {
+                            quickEntries.map((item) => <HomeCard item={item} key={item.tag} />)
+                        }
+                    </div>
+                )}
             </section>
         </div>
     )

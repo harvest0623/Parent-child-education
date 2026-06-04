@@ -3,6 +3,8 @@ import { useState, useRef, useEffect } from 'react'
 import { DotLoading, Toast } from 'antd-mobile'
 import axios from '../Http';
 import { useNavigate } from 'react-router-dom';
+import TTSButton from '../Components/TTSButton';
+import chatHistoryStorage from '../Utils/chatHistory';
 
 class HandleMessages {
     constructor() {
@@ -49,7 +51,16 @@ export default function AiChat() {
 
     useEffect(() => {
         msg.current = new HandleMessages();
-        // msg.current.initMessages();
+        
+        // 加载历史对话记录
+        const savedMessages = chatHistoryStorage.getBySession(sessionIdRef.current);
+        if (savedMessages.length > 0) {
+            msg.current.messages = savedMessages;
+        } else {
+            // 如果没有历史记录，添加欢迎消息
+            msg.current.initMessages();
+        }
+        
         setFlag(flag + 1);
     }, [])
 
@@ -63,6 +74,7 @@ export default function AiChat() {
         const userMessage = msg.current.createMessage(Date.now(), 'user', content, new Date().toLocaleString());
        
         msg.current.addMessage(userMessage);
+        chatHistoryStorage.saveMessage(sessionIdRef.current, userMessage);
         setFlag(flag + 1);
         inputRef.current.value = '';
 
@@ -118,7 +130,12 @@ export default function AiChat() {
                                     setFlag(flag + 1);
                                 }
                             } else if (data.type === 'end') {
-                                // 流式响应结束
+                                // 流式响应结束，保存AI消息
+                                const messages = msg.current.getMessages();
+                                const lastMessage = messages[messages.length - 1];
+                                if (lastMessage && lastMessage.id === aiMessageId) {
+                                    chatHistoryStorage.saveMessage(sessionIdRef.current, lastMessage);
+                                }
                                 console.log('Stream ended');
                             } else if (data.type === 'error') {
                                 throw new Error(data.message);
@@ -154,6 +171,7 @@ export default function AiChat() {
                 sessionId: sessionIdRef.current,
             });
             msg.current.clearMessages();
+            chatHistoryStorage.clearSession(sessionIdRef.current);
             setFlag(flag + 1);
             Toast.show({
                 content: '对话历史已清除',
@@ -198,7 +216,12 @@ export default function AiChat() {
                             <div className={`ai-dialogue-message ${message.role === 'user' ? 'user-message' : 'ai-message'}`} key={message.id}>
                                 <div className="ai-dialogue-message__content">
                                     <div className="ai-dialogue-message__text">{message.content}</div>
-                                    <div className="ai-dialogue-message__time">{message.timestamp.toLocaleString()}</div>
+                                    <div className="ai-dialogue-message__footer">
+                                        <div className="ai-dialogue-message__time">{message.timestamp.toLocaleString()}</div>
+                                        {message.role === 'ai' && message.content && (
+                                            <TTSButton text={message.content} size="small" />
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         ))
