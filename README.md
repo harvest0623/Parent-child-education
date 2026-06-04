@@ -4,10 +4,10 @@
 <a href="https://vitejs.dev/" target="_blank"><img src="https://img.shields.io/badge/Vite-4.0+-646CFF?logo=vite&logoColor=646CFF" alt="Vite"></a>
 <a href="https://koajs.com/" target="_blank"><img src="https://img.shields.io/badge/Koa-2.0+-33333D?logo=koa&logoColor=33333D" alt="Koa"></a>
 <a href="https://www.mysql.com/" target="_blank"><img src="https://img.shields.io/badge/MySQL-5.7+-4479A1?logo=mysql&logoColor=4479A1" alt="MySQL"></a>
+<a href="https://langchain.com/" target="_blank"><img src="https://img.shields.io/badge/LangChain-1.0+-1a1a2e?logo=langchain&logoColor=white" alt="LangChain"></a>
 <a href="https://reactrouter.com/" target="_blank"><img src="https://img.shields.io/badge/React_Router-6.0+-CA4245?logo=reactrouter&logoColor=CA4245" alt="React Router"></a>
 <a href="https://mobile.ant.design/" target="_blank"><img src="https://img.shields.io/badge/Ant_Design_Mobile-5.0+-0170FE?logo=antdesign&logoColor=0170FE" alt="Ant Design Mobile"></a>
 <a href="https://axios-http.com/" target="_blank"><img src="https://img.shields.io/badge/Axios-0.21+-5A29E4?logo=axios&logoColor=5A29E4" alt="Axios"></a>
-<a href="https://lesscss.org/" target="_blank"><img src="https://img.shields.io/badge/Less-3.0+-1D365D?logo=less&logoColor=1D365D" alt="Less"></a>
 <a href="https://jwt.io/" target="_blank"><img src="https://img.shields.io/badge/JWT-8.0+-000000?logo=jsonwebtokens&logoColor=000000" alt="JWT"></a>
 
 **本项目使用：**
@@ -16,13 +16,15 @@
 <a href="https://vitejs.dev/" target="_blank"><img src="https://img.shields.io/badge/Vite-7.3.1-646CFF?logo=vite&logoColor=646CFF" alt="Vite"></a>
 <a href="https://koajs.com/" target="_blank"><img src="https://img.shields.io/badge/Koa-3.1.1-33333D?logo=koa&logoColor=33333D" alt="Koa"></a>
 <a href="https://www.mysql.com/" target="_blank"><img src="https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=4479A1" alt="MySQL"></a>
+<a href="https://langchain.com/" target="_blank"><img src="https://img.shields.io/badge/LangChain-1.4.4-1a1a2e?logo=langchain&logoColor=white" alt="LangChain"></a>
 <a href="https://reactrouter.com/" target="_blank"><img src="https://img.shields.io/badge/React_Router-7.13.0-CA4245?logo=reactrouter&logoColor=CA4245" alt="React Router"></a>
 <a href="https://mobile.ant.design/" target="_blank"><img src="https://img.shields.io/badge/Ant_Design_Mobile-5.42.3-0170FE?logo=antdesign&logoColor=0170FE" alt="Ant Design Mobile"></a>
 <a href="https://axios-http.com/" target="_blank"><img src="https://img.shields.io/badge/Axios-1.13.5-5A29E4?logo=axios&logoColor=5A29E4" alt="Axios"></a>
-<a href="https://lesscss.org/" target="_blank"><img src="https://img.shields.io/badge/Less-4.5.1-1D365D?logo=less&logoColor=1D365D" alt="Less"></a>
 <a href="https://jwt.io/" target="_blank"><img src="https://img.shields.io/badge/JWT-9.0.3-000000?logo=jsonwebtokens&logoColor=000000" alt="JWT"></a>
 
-> **一个专注于 0-12 岁亲子教育的智能陪伴平台**，集成 AI 识物、智能对话、学习启蒙、作业辅导、睡前故事等功能，让科技成为亲子成长的得力助手。家长可以在平台上注册账号，为孩子创建专属的学习环境。
+> **一个专注于 0-12 岁亲子教育的智能陪伴平台**，集成 AI 识物、智能对话、学习启蒙、作业辅导、知识问答、学习进度追踪等功能，让科技成为亲子成长的得力助手。家长可以在平台上注册账号，为孩子创建专属的学习环境。
+
+---
 
 ## ✨ 项目亮点
 
@@ -34,11 +36,26 @@
 - 调用 Coze 工作流实现图像识别
 - AI 智能讲解物品用途、安全提示，支持语音朗读
 
-#### 智能对话助手
-- 集成 DeepSeek 大语言模型
-- 支持多轮对话上下文记忆
-- 专为亲子教育场景优化的系统提示词
-- 实时流式响应，打字机效果展示
+#### LangChain 智能对话（新增）
+- 基于 LangChain 框架的智能对话系统
+- 支持多轮对话上下文记忆（30分钟会话超时）
+- SSE 流式响应，打字机效果展示
+- TTS 语音朗读，支持暂停、恢复、停止
+- 对话历史本地存储，支持多会话管理
+
+#### AI 作业辅导 Agent（新增）
+- 基于 LangChain Agent 的作业辅导系统
+- 内置数学计算工具、语文解释工具、英语翻译工具
+- 支持选择学科（数学、语文、英语、科学）
+- 支持选择学生水平（小学、初中、高中）
+- 分步讲解，举一反三，鼓励式教学
+
+#### 知识问答 RAG（新增）
+- 基于 LangChain RAG（检索增强生成）的知识问答系统
+- 使用 HNSWLib 向量存储，支持知识库文档向量化
+- 支持持久化向量存储，自动检测知识库更新
+- 热门问题推荐，快速提问
+- 支持多学科知识库（数学、语文、英语、科学）
 
 #### 作业辅导系统
 - 拍照搜题：拍照即可获取题目答案和解析
@@ -64,6 +81,37 @@
 - 实验原理讲解：帮助孩子理解科学知识
 - 互动问答：巩固学习成果
 
+### 📊 学习进度追踪（新增）
+
+#### 学习统计
+- 总学习时长、总答题数、连续学习天数
+- 今日学习时长、今日答题数量
+- 各学科正确率、学习时长、答题数
+
+#### 可视化图表
+- 最近 7 天学习时长柱状图
+- 学科进度进度条
+- 学习趋势分析
+
+#### 成就徽章系统
+- 学习成就：初次学习、学习10分钟、学习1小时、学习10小时
+- 答题成就：答题10道、答题100道
+- 连续学习：连续学习3天、连续学习7天、连续学习30天
+- 正确率成就：正确率80%
+
+### 💬 用户反馈系统（新增）
+
+#### 意见反馈
+- 反馈类型：功能建议、问题反馈、体验优化、内容纠错、其他
+- 相关功能选择：整体应用、智能对话、作业辅导、知识问答等
+- 整体评分：1-5 星评分
+- 联系方式：可选填手机号或邮箱
+
+#### 反馈管理
+- 反馈数据持久化存储（JSON 文件）
+- 支持反馈列表查询、分页、筛选
+- 反馈状态管理：待处理、已审核、已解决
+
 ### 📱 移动端优先
 
 #### rem 响应式布局
@@ -80,6 +128,7 @@
 - 精心设计的 CSS 动画与过渡效果
 - Ant Design Mobile 组件库提供原生般体验
 - 滑动切换、点击反馈等细节打磨
+- 骨架屏组件，优化加载体验
 
 ### 🔐 安全可靠
 
@@ -101,21 +150,31 @@
 
 ### 🤖 AI 能力集成
 
+#### LangChain 框架（新增）
+- 统一的 LLM 调用接口
+- 支持多轮对话上下文记忆
+- 支持工具调用（数学计算、语文解释、英语翻译）
+- 支持 RAG 检索增强生成
+- 支持 SSE 流式响应
+
 #### Coze 工作流
 - 图像识别工作流，支持物体识别
 - 返回结构化数据：物品名称、描述、安全提示
 - 支持语音合成，自动朗读识别结果
 - 作业辅导工作流：题目识别、答案解析
+- 睡前故事生成工作流
 
 #### DeepSeek 大模型
 - 兼容 OpenAI API 格式，接入成本低
 - 中文理解能力强，适合教育场景
 - 支持系统提示词定制角色
 
-#### 语音交互能力
-- 支持语音输入（浏览器 Web Speech API）
-- AI 回复支持语音朗读
-- 适合低龄儿童使用场景
+#### TTS 语音合成（新增）
+- 基于浏览器 Web Speech API
+- 支持中文语音朗读
+- 支持暂停、恢复、停止操作
+- 支持语速、音高、音量调节
+- TTSButton 组件，一键朗读
 
 ### 🏗️ 架构设计
 
@@ -134,13 +193,17 @@
 - Toast 提示用户友好的错误信息
 - HTTP 状态码区分错误类型
 
+---
+
 ## 🚀 功能特性
 
 | 功能模块 | 描述 |
 |---------|------|
 | 🔐 用户系统 | 登录/注册、JWT 认证、账户管理、头像上传、昵称修改、密码修改 |
 | 📸 AI 识物 | 拍照识别物品，AI 智能讲解，支持语音朗读 |
-| 💬 智能对话 | DeepSeek 驱动的 AI 对话助手，支持多轮对话 |
+| 💬 智能对话 | LangChain 驱动的 AI 对话助手，支持多轮对话、SSE 流式响应、TTS 朗读 |
+| 🤖 AI 作业辅导 | LangChain Agent 驱动，支持数学计算、语文解释、英语翻译工具 |
+| 🔍 知识问答 | RAG 检索增强生成，基于知识库的精准问答 |
 | 📚 学习启蒙 | 古诗词、英语单词、科学实验 |
 | 📝 成长任务 | 亲子打卡，习惯养成 |
 | 🎨 主题切换 | 多种配色主题，个性化体验 |
@@ -148,7 +211,12 @@
 | 🔬 科学实验 | 丰富的实验库，分步指导，互动问答 |
 | 📷 作业辅导 | 拍照搜题、文字搜题、分步讲解、学习记录 |
 | 🎤 语音交互 | 语音输入、实时转文字、AI 语音朗读 |
+| 📊 学习进度 | 学习统计、进度图表、成就徽章系统 |
+| 💭 意见反馈 | 反馈提交、评分、反馈管理 |
+| 🔊 TTS 朗读 | 语音合成，支持暂停、恢复、停止 |
 | 📱 个人中心 | 收藏管理、浏览历史、通知设置、帮助中心 |
+
+---
 
 ## 🛠️ 技术栈
 
@@ -174,6 +242,12 @@
 | Bcrypt | 6.0.0 | 密码加密 |
 | SVG Captcha | 1.4.0 | 验证码生成 |
 | OpenAI | 6.25.0 | AI 能力接入 |
+| LangChain | 1.4.4 | LLM 应用开发框架 |
+| @langchain/openai | 1.4.7 | LangChain OpenAI 集成 |
+| @langchain/community | 1.1.29 | LangChain 社区组件 |
+| hnswlib-node | 3.0.0 | 向量存储 |
+
+---
 
 ## 📁 项目结构
 
@@ -185,13 +259,16 @@ Parent-child-education/
 │   │   │   ├── ImageCaptureAndProcess/  # 图像拍摄与处理组件
 │   │   │   ├── RecognitionResult/       # 识别结果展示组件
 │   │   │   ├── LearnWordsResult/        # 单词学习结果组件
-│   │   │   └── HomeCard.jsx             # 首页卡片组件
+│   │   │   ├── HomeCard.jsx             # 首页卡片组件
+│   │   │   ├── TTSButton.jsx            # TTS 语音朗读按钮（新增）
+│   │   │   ├── Skeleton.jsx             # 骨架屏组件（新增）
+│   │   │   └── LoadingSpinner.jsx       # 加载动画组件（新增）
 │   │   ├── Pages/               # 页面组件
 │   │   │   ├── Login.jsx               # 登录页面
 │   │   │   ├── Register.jsx            # 注册页面
 │   │   │   ├── Home.jsx                # 首页
 │   │   │   ├── AIPage.jsx              # AI 功能页
-│   │   │   ├── AIChat.jsx              # AI 对话页
+│   │   │   ├── AIChat.jsx              # AI 对话页（LangChain + SSE）
 │   │   │   ├── Recognition.jsx         # 拍照识别页
 │   │   │   ├── LearnWords.jsx          # 单词学习页
 │   │   │   ├── LearnPoem.jsx           # 古诗词学习页
@@ -199,10 +276,14 @@ Parent-child-education/
 │   │   │   ├── Habit.jsx               # 习惯养成页
 │   │   │   ├── SleepStory.jsx          # 睡前故事页
 │   │   │   ├── HomeworkTutor.jsx       # 作业辅导页
+│   │   │   ├── HomeworkAgent.jsx       # AI 作业辅导 Agent（新增）
+│   │   │   ├── KnowledgeQA.jsx         # 知识问答 RAG（新增）
 │   │   │   ├── PhotoSearch.jsx         # 拍照搜题页
 │   │   │   ├── QuestionAnalysis.jsx    # 题目解析页
 │   │   │   ├── StudyRecord.jsx         # 学习记录页
+│   │   │   ├── StudyProgress.jsx       # 学习进度页（新增）
 │   │   │   ├── VoiceInteraction.jsx    # 语音交互页
+│   │   │   ├── Feedback.jsx            # 意见反馈页（新增）
 │   │   │   ├── MinePage.jsx            # 个人中心
 │   │   │   ├── AccountSetting.jsx      # 账户设置
 │   │   │   ├── MyContentPage.jsx       # 我的内容页
@@ -212,7 +293,10 @@ Parent-child-education/
 │   │   ├── Styles/                 # 样式文件
 │   │   ├── Utils/                  # 工具函数
 │   │   │   ├── rem.js              # rem 适配工具
-│   │   │   └── scrollManager.js    # 滚动管理工具
+│   │   │   ├── scrollManager.js    # 滚动管理工具
+│   │   │   ├── chatHistory.js      # 对话历史本地存储（新增）
+│   │   │   ├── tts.js              # TTS 语音合成服务（新增）
+│   │   │   └── loadingManager.js   # 全局加载状态管理（新增）
 │   │   ├── App.jsx                 # 应用入口
 │   │   └── main.jsx                # React 挂载点
 │   ├── public/                     # 静态资源
@@ -224,23 +308,41 @@ Parent-child-education/
 │   │   ├── Config/              # 配置文件
 │   │   │   └── database.js      # 数据库配置
 │   │   ├── Controllers/         # 控制器层
-│   │   │   ├── authController.js      # 认证控制器
-│   │   │   ├── cozeController.js      # Coze AI 控制器
-│   │   │   └── deepseekController.js  # DeepSeek 控制器
+│   │   │   ├── authController.js           # 认证控制器
+│   │   │   ├── cozeController.js           # Coze AI 控制器
+│   │   │   ├── deepseekController.js       # DeepSeek 控制器
+│   │   │   ├── langchainController.js      # LangChain 对话控制器（新增）
+│   │   │   ├── homeworkAgentController.js  # 作业辅导 Agent 控制器（新增）
+│   │   │   ├── knowledgeRAGController.js   # 知识问答 RAG 控制器（新增）
+│   │   │   ├── learningProgressController.js # 学习进度控制器（新增）
+│   │   │   ├── feedbackController.js       # 反馈控制器（新增）
+│   │   │   └── streamChatController.js     # SSE 流式对话控制器（新增）
 │   │   ├── Models/              # 数据模型层
 │   │   │   └── userModel.js     # 用户模型
 │   │   ├── Routes/              # 路由层
-│   │   │   ├── authRoutes.js    # 认证路由
-│   │   │   ├── cozeAPI.js       # Coze API 路由
-│   │   │   └── deepseekAPI.js   # DeepSeek API 路由
+│   │   │   ├── authRoutes.js           # 认证路由
+│   │   │   ├── cozeAPI.js              # Coze API 路由
+│   │   │   ├── deepseekAPI.js          # DeepSeek API 路由
+│   │   │   ├── langchainAPI.js         # LangChain 路由（新增）
+│   │   │   ├── homeworkAgentAPI.js     # 作业辅导 Agent 路由（新增）
+│   │   │   ├── knowledgeRAGAPI.js      # 知识问答 RAG 路由（新增）
+│   │   │   ├── learningProgressAPI.js  # 学习进度路由（新增）
+│   │   │   └── feedbackAPI.js          # 反馈路由（新增）
 │   │   ├── Utils/               # 工具函数
 │   │   │   ├── captcha.js       # 验证码工具
-│   │   │   └── jwt.js           # JWT 工具
+│   │   │   ├── jwt.js           # JWT 工具
+│   │   │   ├── langchainConfig.js # LangChain 配置（新增）
+│   │   │   └── sse.js           # SSE 工具（新增）
+│   │   ├── knowledge-base/      # 知识库文档（新增）
+│   │   ├── vector-stores/       # 向量存储（新增）
+│   │   ├── data/                # 数据存储（新增）
 │   │   └── index.js             # 服务入口
 │   └── package.json
 │
 └── README.md
 ```
+
+---
 
 ## 🏃 快速开始
 
@@ -283,7 +385,7 @@ DB_NAME=parent_child_education
 # Coze API 密钥
 VITE_COZE_IMAGE_TO_TEXT_AND_VOICE=your_coze_api_key
 
-# DeepSeek API 密钥
+# DeepSeek API 密钥（LangChain 也使用此密钥）
 DEEPSEEK_API_KEY=your_deepseek_api_key
 ```
 
@@ -307,38 +409,216 @@ npm run dev
 
 预览地址：[星伴童行](http://47.118.25.23:8083)
 
+---
+
 ## 🔍 核心实现原理
 
-### 1. 移动端 rem 适配方案
+### 1. LangChain 智能对话系统
 
-采用 rem 单位实现移动端多屏幕适配，核心思想是将设计稿按比例缩放：
+基于 LangChain 框架实现带记忆的智能对话：
 
 ```javascript
-// Utils/rem.js - 立即执行函数
+// Backend/Utils/langchainConfig.js
+const { ChatOpenAI } = require('@langchain/openai');
+const { ChatPromptTemplate, MessagesPlaceholder } = require('@langchain/core/prompts');
+const { RunnableWithMessageHistory } = require('@langchain/core/runnables');
+const { ChatMessageHistory } = require('@langchain/core/memory');
+
+// 会话管理器
+class ChatSessionManager {
+    constructor() {
+        this.sessions = new Map();
+        this.sessionTimeout = 30 * 60 * 1000; // 30分钟超时
+    }
+
+    getSessionHistory(sessionId) {
+        if (!this.sessions.has(sessionId)) {
+            const history = new ChatMessageHistory();
+            this.sessions.set(sessionId, { history, lastAccess: Date.now() });
+        }
+        return this.sessions.get(sessionId).history;
+    }
+}
+
+// 创建带记忆的对话链
+const createChatChain = (sessionId, options = {}) => {
+    const model = new ChatOpenAI({
+        modelName: 'deepseek-chat',
+        openAIApiKey: process.env.DEEPSEEK_API_KEY,
+        configuration: { baseURL: 'https://api.deepseek.com' },
+    });
+
+    const prompt = ChatPromptTemplate.fromMessages([
+        ['system', options.systemPrompt || '你是一个专业的亲子教育助手'],
+        new MessagesPlaceholder('history'),
+        ['human', '{input}'],
+    ]);
+
+    const chain = prompt.pipe(model);
+
+    return new RunnableWithMessageHistory({
+        runnable: chain,
+        getMessageHistory: (sessionId) => chatSessionManager.getSessionHistory(sessionId),
+        inputMessagesKey: 'input',
+        historyMessagesKey: 'history',
+    });
+};
+```
+
+### 2. SSE 流式响应
+
+使用 Server-Sent Events 实现流式对话：
+
+```javascript
+// Backend/Utils/sse.js
+async function createSSEStream(ctx, handler) {
+    ctx.set({
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive',
+    });
+    ctx.respond = false;
+
+    await handler({
+        sendStart: (data) => ctx.res.write(`data: ${JSON.stringify({ type: 'start', ...data })}\n\n`),
+        sendChunk: (content) => ctx.res.write(`data: ${JSON.stringify({ type: 'chunk', content })}\n\n`),
+        sendEnd: (data) => {
+            ctx.res.write(`data: ${JSON.stringify({ type: 'end', ...data })}\n\n`);
+            ctx.res.end();
+        },
+    });
+}
+```
+
+### 3. AI 作业辅导 Agent
+
+基于 LangChain Agent 实现作业辅导：
+
+```javascript
+// Backend/Controllers/homeworkAgentController.js
+const { createReactAgent } = require('@langchain/langgraph/prebuilt');
+
+// 创建数学计算工具
+const mathCalculatorTool = new Tool({
+    name: 'math_calculator',
+    description: '用于数学计算',
+    func: async (input) => {
+        const result = Function(`"use strict"; return (${input})`)();
+        return `计算结果: ${result}`;
+    },
+});
+
+// 根据学科选择工具
+const tools = [mathCalculatorTool];
+if (subject === '语文') tools.push(chineseExplanationTool);
+if (subject === '英语') tools.push(englishTranslationTool);
+```
+
+### 4. 知识问答 RAG
+
+基于 LangChain RAG 实现知识问答：
+
+```javascript
+// Backend/Controllers/knowledgeRAGController.js
+const { HNSWLib } = require('@langchain/community/vectorstores/hnswlib');
+const { OpenAIEmbeddings } = require('@langchain/openai');
+const { RecursiveCharacterTextSplitter } = require('@langchain/textsplitters');
+
+// 创建向量存储
+async function getVectorStore(subject) {
+    const embeddings = new OpenAIEmbeddings({
+        openAIApiKey: process.env.DEEPSEEK_API_KEY,
+        configuration: { baseURL: 'https://api.deepseek.com' },
+    });
+
+    // 加载知识库文档
+    const documents = await loadKnowledgeDocuments(subject);
+    
+    // 分割文档
+    const splitter = new RecursiveCharacterTextSplitter({
+        chunkSize: 500,
+        chunkOverlap: 50,
+    });
+    const splitDocs = await splitter.splitDocuments(documents);
+    
+    // 创建向量存储
+    return await HNSWLib.fromDocuments(splitDocs, embeddings);
+}
+```
+
+### 5. 学习进度系统
+
+学习进度追踪和成就徽章系统：
+
+```javascript
+// Backend/Controllers/learningProgressController.js
+// 成就徽章检查
+function checkAchievements(userProgress) {
+    const achievements = [
+        { id: 'first_study', name: '初次学习', condition: () => userProgress.totalStudyTime > 0 },
+        { id: 'study_1hour', name: '学习1小时', condition: () => userProgress.totalStudyTime >= 60 },
+        { id: 'streak_7', name: '连续学习7天', condition: () => userProgress.streakDays >= 7 },
+        { id: 'accuracy_80', name: '正确率80%', condition: () => {
+            return userProgress.totalQuestions >= 10 && 
+                   (userProgress.correctQuestions / userProgress.totalQuestions) >= 0.8;
+        }},
+    ];
+
+    for (const achievement of achievements) {
+        if (!userProgress.achievements.find(a => a.id === achievement.id) && achievement.condition()) {
+            userProgress.achievements.push({
+                id: achievement.id,
+                name: achievement.name,
+                unlockedAt: new Date().toISOString(),
+            });
+        }
+    }
+}
+```
+
+### 6. TTS 语音合成
+
+基于浏览器 Web Speech API 实现语音朗读：
+
+```javascript
+// Frontend/Utils/tts.js
+class TTSService {
+    speak(text, options = {}) {
+        this.utterance = new SpeechSynthesisUtterance(text);
+        this.utterance.rate = options.rate || 1;
+        this.utterance.pitch = options.pitch || 1;
+        this.utterance.volume = options.volume || 1;
+        this.utterance.lang = options.lang || 'zh-CN';
+        this.synth.speak(this.utterance);
+    }
+
+    pause() { this.synth.pause(); }
+    resume() { this.synth.resume(); }
+    stop() { this.synth.cancel(); }
+}
+```
+
+### 7. 移动端 rem 适配方案
+
+采用 rem 单位实现移动端多屏幕适配：
+
+```javascript
+// Utils/rem.js
 (function(win, doc) {
-    const docEl = doc.documentElement;  // 获取 html 根元素
-    const width = docEl.clientWidth;    // 获取视口宽度
+    const docEl = doc.documentElement;
+    const width = docEl.clientWidth;
+    docEl.style.fontSize = width / 10 + 'px';
 
-    // 设置 html 字体大小 = 视口宽度 / 10
-    // 设计稿 375px 时，1rem = 37.5px
-    docEl.style.fontSize = width / 10 + 'px';  
-
-    // 监听窗口变化，动态调整
     win.addEventListener('resize', () => {
         const newWidth = docEl.clientWidth;
         docEl.style.fontSize = newWidth / 10 + 'px';
     });
 
-    // 设置 body 基础字体大小
     doc.body.style.fontSize = '16px';
 })(window, document);
 ```
 
-**使用方式**：CSS 中使用 rem 单位，如 `width: 2rem` 在 375px 屏幕上等于 75px。
-
----
-
-### 2. JWT 身份认证流程
+### 8. JWT 身份认证流程
 
 完整的身份认证流程包含 Token 生成、携带、验证三个环节：
 
@@ -346,82 +626,17 @@ npm run dev
 
 ```javascript
 // Controllers/authController.js
-const jwt = require('jsonwebtoken');
-
-async function login(ctx) {
-    const { phone, password } = ctx.request.body;
-    
-    // 验证用户存在
-    const user = await findUserByPhone(phone);
-    if (!user) {
-        ctx.status = 400;
-        ctx.body = { message: '账号不存在' };
-        return;
-    }
-
-    // 验证密码
-    const ok = await bcrypt.compare(password, user.password_hash);
-    if (!ok) {
-        ctx.status = 400;
-        ctx.body = { message: '密码错误' };
-        return;
-    }
-
-    // 生成 JWT Token（有效期 7 天）
-    const token = jwt.sign(
-        { id: user.id, phone: user.phone },  // 载荷
-        '666',                                // 密钥
-        { expiresIn: '7d' }                   // 过期时间
-    );
-
-    ctx.body = {
-        code: 1,
-        message: '登录成功',
-        token,
-        user: { id: user.id, phone: user.phone }
-    };
-}
-```
-
-**后端 - Token 验证中间件**
-
-```javascript
-// Utils/jwt.js
-function verifyToken() {
-    return async (ctx, next) => {
-        const token = ctx.request.header.authorization;
-        
-        if (!token) {
-            ctx.status = 416;
-            ctx.body = { code: 0, message: '请先登录' };
-            return;
-        }
-
-        try {
-            const decoded = jwt.verify(token, '666');
-            if (decoded.id) {
-                ctx.userId = decoded.id;  // 将用户 ID 注入上下文
-                await next();
-            }
-        } catch (error) {
-            ctx.status = 416;
-            ctx.body = { code: 0, message: 'token 无效' };
-        }
-    };
-}
-
-// 在需要认证的路由上使用
-router.post('/chat', verifyToken(), deepseekChat);
+const token = jwt.sign(
+    { id: user.id, phone: user.phone },
+    '666',
+    { expiresIn: '7d' }
+);
 ```
 
 **前端 - Axios 请求拦截器自动携带 Token**
 
 ```javascript
 // Http/index.js
-import axios from 'axios';
-import { Toast } from 'antd-mobile';
-
-// 请求拦截器：自动携带 Token
 axios.interceptors.request.use(request => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -429,417 +644,9 @@ axios.interceptors.request.use(request => {
     }
     return request;
 });
-
-// 响应拦截器：统一错误处理
-axios.interceptors.response.use(
-    (response) => {
-        if (response.data.code !== 1) {
-            Toast.show({ icon: 'fail', content: response.data.message });
-            return Promise.reject(response);
-        }
-        return response;
-    },
-    (res) => {
-        Toast.show({ icon: 'fail', content: res.response.data.message });
-        
-        // Token 过期，跳转登录页
-        if (res.status == 416) {
-            setTimeout(() => {
-                window.location.href = '/login';
-            }, 2000);
-        }
-        return Promise.reject(res);
-    }
-);
 ```
 
 ---
-
-### 3. AI 图像识别流程
-
-采用「前端采集 → Base64 编码 → 后端转发 → Coze 工作流」的完整链路：
-
-**前端 - 图片采集与编码**
-
-```javascript
-// Components/ImageCaptureAndProcess/Index.jsx
-export default function ImageCaptureAndProcess({ onRecognition }) {
-    const fileInputRef = useRef(null);
-    const videoRef = useRef(null);
-    const canvasRef = useRef(null);
-
-    // 方式一：相册上传
-    const handleImageUpload = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const imageUrl = URL.createObjectURL(file);
-            setSelectedImage(imageUrl);
-            onRecognition(file);  // 回调识别函数
-        }
-    };
-
-    // 方式二：实时拍照
-    const handleCamera = async () => {
-        // 打开摄像头
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        videoRef.current.srcObject = stream;
-        videoRef.current.play();
-
-        // 延时拍照
-        setTimeout(() => {
-            const canvas = canvasRef.current;
-            const context = canvas.getContext('2d');
-            canvas.width = videoRef.current.videoWidth;
-            canvas.height = videoRef.current.videoHeight;
-            context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
-            
-            // 停止摄像头
-            stream.getTracks().forEach(track => track.stop());
-            
-            // Canvas 转 Blob
-            canvas.toBlob(blob => {
-                const file = new File([blob], 'captured-image.jpg', { type: 'image/jpeg' });
-                onRecognition(file);
-            }, 'image/jpeg', 0.8);
-        }, 100);
-    };
-}
-```
-
-**前端 - 调用识别接口**
-
-```javascript
-// Pages/Recognition.jsx
-export default function Recognition() {
-    const [recognitionResult, setRecognitionResult] = useState(null);
-
-    const realRecognition = async (file) => {
-        // File 转 Base64
-        const dataUrl = await new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = (err) => reject(err);
-        });
-
-        // 显示加载提示
-        Toast.show({
-            content: 'AI识别中...',
-            duration: 0,
-            icon: 'loading',
-            maskClickable: false
-        });
-
-        // 发送识别请求
-        const res = await axios.post('/api/coze/recognition', {
-            img: dataUrl  // data:image/jpeg;base64,/9j/4AAQ...
-        });
-
-        Toast.clear();
-        setRecognitionResult(res.data);
-    };
-}
-```
-
-**后端 - 转发到 Coze 工作流**
-
-```javascript
-// Controllers/cozeController.js
-const axios = require('axios');
-
-async function recognition(ctx) {
-    const { img } = ctx.request.body;  // 接收 Base64 图片
-
-    try {
-        // 调用 Coze 工作流 API
-        const res = await axios({
-            method: 'post',
-            url: 'https://z2sjhbyckh.coze.site/run',
-            headers: {
-                'Authorization': `Bearer ${process.env.VITE_COZE_IMAGE_TO_TEXT_AND_VOICE}`,
-                'Content-Type': 'application/json'
-            },
-            data: { image_base64: img }
-        });
-
-        ctx.body = {
-            code: 1,
-            data: res.data  // 返回识别结果
-        };
-    } catch (error) {
-        ctx.status = 500;
-        ctx.body = { code: 0, message: error.message };
-    }
-}
-```
-
----
-
-### 4. DeepSeek 智能对话
-
-使用 OpenAI SDK 兼容接口接入 DeepSeek 大模型：
-
-```javascript
-// Controllers/deepseekController.js
-const OpenAI = require('openai');
-
-const openai = new OpenAI({
-    baseURL: 'https://api.deepseek.com',
-    apiKey: process.env.VITE_DEEPSEEK_API_KEY,
-});
-
-async function deepseekChat(ctx) {
-    const { message } = ctx.request.body;
-
-    if (!message) {
-        ctx.status = 400;
-        ctx.body = { code: 0, message: '消息不能为空' };
-        return;
-    }
-
-    try {
-        const completion = await openai.chat.completions.create({
-            model: "deepseek-chat",
-            messages: [
-                { role: "system", content: "你是一个专业的教育助手" },
-                { role: "user", content: message }
-            ],
-        });
-
-        ctx.body = {
-            code: 1,
-            message: completion.choices[0].message.content
-        };
-    } catch (error) {
-        ctx.status = 500;
-        ctx.body = { code: 0, message: '请求失败' };
-    }
-}
-```
-
----
-
-### 5. 密码加密存储
-
-使用 bcrypt 库实现密码的安全存储与验证：
-
-```javascript
-// Controllers/authController.js
-const bcrypt = require('bcrypt');
-const saltRounds = 10;  // 加密强度
-
-// 注册时加密密码
-async function register(ctx) {
-    const { password } = ctx.request.body;
-    
-    // 生成密码哈希（自动加盐）
-    const hashedPassword = await bcrypt.hash(password, saltRounds);
-    
-    // 存储到数据库
-    await createUser({ phone, password_hash: hashedPassword, nickname });
-}
-
-// 登录时验证密码
-async function login(ctx) {
-    const { password } = ctx.request.body;
-    const user = await findUserByPhone(phone);
-    
-    // 比对密码
-    const isMatch = await bcrypt.compare(password, user.password_hash);
-    if (!isMatch) {
-        ctx.status = 400;
-        ctx.body = { message: '密码错误' };
-        return;
-    }
-}
-```
-
-**安全特性**：
-- 每次加密自动生成随机盐值
-- 相同密码每次加密结果不同
-- 无法从哈希值反推原密码
-- saltRounds = 10 约需 100ms 计算，平衡安全与性能
-
----
-
-### 6. SVG 验证码生成
-
-使用 svg-captcha 库生成图形验证码：
-
-```javascript
-// Utils/captcha.js
-const svgCaptcha = require('svg-captcha');
-
-function generateCaptcha() {
-    const captcha = svgCaptcha.create({
-        size: 4,           // 验证码长度
-        noise: 2,          // 干扰线条数
-        color: true,       // 彩色
-        background: '#f0f0f0'  // 背景色
-    });
-
-    return {
-        id: Date.now().toString(),  // 验证码 ID
-        text: captcha.text,          // 验证码文本
-        svg: captcha.data            // SVG 图片数据
-    };
-}
-
-// 控制器中生成验证码
-function getCaptcha(ctx) {
-    const captcha = generateCaptcha();
-    // 将 captcha.id 和 captcha.text 存入缓存/数据库用于校验
-    ctx.body = {
-        code: 1,
-        captchaId: captcha.id,
-        captchaSvg: captcha.svg
-    };
-}
-```
-
----
-
-### 7. 主题切换系统
-
-组件级主题配置，支持灵活扩展：
-
-```javascript
-// Components/ImageCaptureAndProcess/Index.jsx
-export default function Index({ theme = 'default' }) {
-    const themeConfig = {
-        default: {
-            primary: '#ff7a45',
-            secondary: '#f5f5f5',
-            loading: '#ff6b6b',
-            voice: '#ffd166',
-            gradient: ['#fef3e6', '#e6f7ff']
-        },
-        green: {
-            primary: '#4caf50',
-            secondary: '#f5f5f5',
-            loading: '#4caf50',
-            voice: '#4caf50',
-            gradient: ['#e8f5e8', '#fff3e0']
-        }
-    };
-
-    const currentTheme = themeConfig[theme] || themeConfig.default;
-
-    return (
-        <div style={{ '--primary': currentTheme.primary }}>
-            {/* 组件内容 */}
-        </div>
-    );
-}
-```
-
----
-
-### 8. 语音交互实现
-
-使用浏览器 Web Speech API 实现语音输入和语音合成：
-
-```javascript
-// Pages/VoiceInteraction.jsx
-const startRecording = async () => {
-    try {
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        if (!SpeechRecognition) {
-            setError('您的浏览器不支持语音识别，请使用 Chrome 浏览器');
-            return;
-        }
-
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        streamRef.current = stream;
-
-        const recognition = new SpeechRecognition();
-        recognition.lang = 'zh-CN';
-        recognition.continuous = true;
-        recognition.interimResults = true;
-        recognitionRef.current = recognition;
-
-        recognition.onresult = (event) => {
-            let final = '';
-            let interim = '';
-            for (let i = 0; i < event.results.length; i++) {
-                const transcript = event.results[i][0].transcript;
-                if (event.results[i].isFinal) {
-                    final += transcript;
-                } else {
-                    interim += transcript;
-                }
-            }
-            if (final) finalTranscriptRef.current = final;
-            setInterimText(interim || final);
-        };
-
-        recognition.start();
-        setStatus('recording');
-    } catch (err) {
-        if (err.name === 'NotAllowedError' || err.name === 'NotFoundError') {
-            setError('请允许麦克风权限后重试');
-        } else {
-            setError('无法启动录音功能，请稍后重试');
-        }
-    }
-};
-
-// 语音合成
-const speakText = (text) => {
-    if (!window.speechSynthesis) { setStatus('idle'); return }
-    window.speechSynthesis.cancel()
-    const utterance = new SpeechSynthesisUtterance(text)
-    utterance.lang = 'zh-CN'
-    utterance.rate = 0.9
-    utterance.pitch = 1.1
-    utterance.onend = () => setStatus('idle')
-    utterance.onerror = () => setStatus('idle')
-    setStatus('speaking')
-    window.speechSynthesis.speak(utterance)
-}
-```
-
----
-
-### 9. 睡前故事生成
-
-个性化故事生成系统，支持角色、情节、风格选择：
-
-```javascript
-// Pages/SleepStory.jsx
-const generateStory = useCallback(async () => {
-    setLoading(true)
-    setError(null)
-
-    try {
-        const plotText = selectedPlot
-            ? PLOTS.find(p => p.id === selectedPlot)?.name
-            : customPlot.trim()
-
-        const params = {
-            character: CHARACTERS.find(c => c.id === selectedCharacter)?.name,
-            character_desc: CHARACTERS.find(c => c.id === selectedCharacter)?.desc,
-            plot: plotText,
-            style: STYLES.find(s => s.id === selectedStyle)?.name,
-            length: storyLength
-        }
-
-        const response = await axios.post('/api/coze/sleep-story', params)
-
-        if (response.data.code === 1) {
-            setStoryResult(response.data.data)
-            setCurrentStep(4)
-        } else {
-            throw new Error(response.data.message || '生成失败')
-        }
-    } catch (err) {
-        console.error('生成故事失败:', err)
-        setError(err.message || '生成故事时出现错误，请重试')
-    } finally {
-        setLoading(false)
-    }
-}, [selectedCharacter, selectedPlot, customPlot, selectedStyle, storyLength])
-```
 
 ## 🧩 开发指南
 
@@ -855,6 +662,12 @@ const generateStory = useCallback(async () => {
 2. 在 `Backend/src/Controllers/` 下创建控制器
 3. 在 `Backend/src/index.js` 中注册路由
 
+### 添加知识库文档
+
+1. 在 `Backend/src/knowledge-base/` 下创建学科目录
+2. 在学科目录下添加 `.txt` 或 `.md` 格式的知识文档
+3. 系统会自动检测知识库更新并重建向量存储
+
 ### 数据库操作
 
 ```javascript
@@ -869,6 +682,8 @@ class UserModel {
 }
 ```
 
+---
+
 ## 📦 依赖说明
 
 ### 前端生产依赖
@@ -877,7 +692,6 @@ class UserModel {
 - `react-router-dom`：路由管理
 - `antd-mobile`：移动端组件库
 - `axios`：HTTP 请求
-- `dayjs`：日期处理库
 
 ### 后端生产依赖
 
@@ -887,27 +701,10 @@ class UserModel {
 - `bcrypt`：密码加密
 - `svg-captcha`：验证码生成
 - `@koa/cors`：跨域处理
+- `langchain` & `@langchain/openai` & `@langchain/community`：LangChain 框架
+- `hnswlib-node`：向量存储
 
-## 🔄 版本兼容性
-
-### 浏览器兼容性
-
-- **推荐浏览器**：Chrome 90+、Edge 90+、Safari 14+
-- **语音功能**：需要浏览器支持 Web Speech API（Chrome 33+）
-- **摄像头功能**：需要浏览器支持 MediaDevices API（Chrome 53+）
-
-### 移动端兼容性
-
-- **iOS**：Safari 14+、Chrome 90+
-- **Android**：Chrome 90+、系统 WebView 90+
-
-### 功能降级说明
-
-| 功能 | 最低要求 | 降级方案 |
-|------|----------|----------|
-| 语音识别 | Chrome 33+ | 不支持时显示提示，建议使用 Chrome |
-| 摄像头拍照 | Chrome 53+ | 仅支持相册上传 |
-| 语音合成 | 现代浏览器 | 不支持时静默，不显示朗读按钮 |
+---
 
 ## 🤝 贡献指南
 
@@ -916,6 +713,8 @@ class UserModel {
 3. 提交更改：`git commit -m 'Add some YourFeature'`
 4. 推送到分支：`git push origin feature/YourFeature`
 5. 开启 Pull Request
+
+---
 
 ## 📄 许可证
 
