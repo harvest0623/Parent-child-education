@@ -23,6 +23,12 @@ export default function AIPage() {
             title: '语音交互',
             desc: '支持语音输入，更适合孩子使用',
             path: '/voice-interaction'
+        },
+        {
+            icon: 'icon-zhishi',
+            title: '知识问答',
+            desc: '基于教材的精准问答，学习更高效',
+            path: '/knowledge-qa'
         }
     ];
 

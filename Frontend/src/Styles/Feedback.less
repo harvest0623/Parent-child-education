@@ -1,0 +1,255 @@
+@primary-color: #ff7a45;
+@success-color: #4ecdc4;
+@warning-color: #ffd166;
+@danger-color: #ff6b6b;
+@text-color: #1f1f1f;
+@text-secondary: #666;
+@bg-color: #f9fbff;
+@card-bg: #ffffff;
+@shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
+
+.feedback-root {
+    min-height: 100vh;
+    background: @bg-color;
+    padding-bottom: 40px;
+}
+
+.feedback-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: @card-bg;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+    h1 {
+        font-size: 18px;
+        font-weight: 600;
+        color: @text-color;
+    }
+
+    &__back,
+    &__placeholder {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__back {
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        i {
+            font-size: 20px;
+            color: @text-color;
+        }
+    }
+}
+
+.feedback-main {
+    padding: 20px;
+}
+
+.feedback-intro {
+    text-align: center;
+    padding: 30px 20px;
+    background: @card-bg;
+    border-radius: 16px;
+    box-shadow: @shadow;
+    margin-bottom: 20px;
+
+    &__icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, @primary-color, @success-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+
+        i {
+            font-size: 36px;
+            color: white;
+        }
+    }
+
+    h2 {
+        font-size: 20px;
+        color: @text-color;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 14px;
+        color: @text-secondary;
+        line-height: 1.6;
+    }
+}
+
+.feedback-form {
+    background: @card-bg;
+    border-radius: 16px;
+    box-shadow: @shadow;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.feedback-form-item {
+    margin-bottom: 24px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    label {
+        display: block;
+        font-size: 15px;
+        color: @text-color;
+        font-weight: 500;
+        margin-bottom: 12px;
+
+        .required {
+            color: @danger-color;
+        }
+    }
+
+    .adm-selector {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .adm-selector-option {
+        flex: none;
+        min-width: auto;
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .adm-text-area {
+        background: @bg-color;
+        border-radius: 12px;
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+.feedback-rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feedback-rating-text {
+    font-size: 14px;
+    color: @text-secondary;
+}
+
+.feedback-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    background: @bg-color;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+
+    &::placeholder {
+        color: @text-secondary;
+    }
+}
+
+.feedback-submit {
+    margin-bottom: 20px;
+}
+
+.feedback-submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: linear-gradient(135deg, @primary-color, @success-color);
+    color: white;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 122, 69, 0.3);
+    }
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+.feedback-tips {
+    background: @card-bg;
+    border-radius: 16px;
+    box-shadow: @shadow;
+    padding: 20px;
+
+    h3 {
+        font-size: 15px;
+        color: @text-color;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        font-size: 13px;
+        color: @text-secondary;
+        line-height: 1.8;
+        padding-left: 20px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: @primary-color;
+        }
+    }
+}
+
+// 响应式设计
+@media (max-width: 375px) {
+    .feedback-main {
+        padding: 16px;
+    }
+
+    .feedback-intro {
+        padding: 20px 16px;
+    }
+
+    .feedback-form {
+        padding: 16px;
+    }
+
+    .feedback-form-item {
+        margin-bottom: 20px;
+    }
+}

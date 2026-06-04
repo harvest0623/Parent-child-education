@@ -70,6 +70,9 @@ export default function MinePage() {
                         <List.Item prefix={<i className="iconfont icon-liulanlishi"></i>} onClick={() => navigate('/my-content')}>
                             浏览历史
                         </List.Item>
+                        <List.Item prefix={<i className="iconfont icon-xuexijindu"></i>} onClick={() => navigate('/study-progress')}>
+                            学习进度
+                        </List.Item>
                     </List>
                 </Card>
 
@@ -86,6 +89,9 @@ export default function MinePage() {
                         </List.Item>
                         <List.Item prefix={<i className="iconfont icon-bangzhuzhongxin"></i>} onClick={() => navigate('/help-center')}>
                             帮助中心
+                        </List.Item>
+                        <List.Item prefix={<i className="iconfont icon-yijianfankui"></i>} onClick={() => navigate('/feedback')}>
+                            意见反馈
                         </List.Item>
                         <List.Item prefix={<i className="iconfont icon-tuichudenglu"></i>} onClick={handleLogout}>
                             退出登录

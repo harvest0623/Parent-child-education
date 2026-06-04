@@ -5,6 +5,11 @@ const bodyParser = require('koa-bodyparser');
 const authRoutes = require('./Routes/authRoutes.js');
 const cozeRoutes = require('./Routes/cozeAPI.js');
 const deepseekRoutes = require('./Routes/deepseekAPI.js');
+const langchainRoutes = require('./Routes/langchainAPI.js');
+const homeworkAgentRoutes = require('./Routes/homeworkAgentAPI.js');
+const knowledgeRAGRoutes = require('./Routes/knowledgeRAGAPI.js');
+const feedbackRoutes = require('./Routes/feedbackAPI.js');
+const learningProgressRoutes = require('./Routes/learningProgressAPI.js');
 const dotenv = require('dotenv');
 
 dotenv.config({
@@ -34,7 +39,12 @@ app
     .use(router.routes(), router.allowedMethods())
     .use(authRoutes.routes(), authRoutes.allowedMethods())
     .use(cozeRoutes.routes(), cozeRoutes.allowedMethods())
-    .use(deepseekRoutes.routes(), deepseekRoutes.allowedMethods());
+    .use(deepseekRoutes.routes(), deepseekRoutes.allowedMethods())
+    .use(langchainRoutes.routes(), langchainRoutes.allowedMethods())
+    .use(homeworkAgentRoutes.routes(), homeworkAgentRoutes.allowedMethods())
+    .use(knowledgeRAGRoutes.routes(), knowledgeRAGRoutes.allowedMethods())
+    .use(feedbackRoutes.routes(), feedbackRoutes.allowedMethods())
+    .use(learningProgressRoutes.routes(), learningProgressRoutes.allowedMethods());
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');

@@ -23,6 +23,10 @@ import VoiceInteraction from './Pages/VoiceInteraction.jsx'
 import MyContentPage from './Pages/MyContentPage.jsx'
 import NotificationSetting from './Pages/NotificationSetting.jsx'
 import HelpCenter from './Pages/HelpCenter.jsx'
+import HomeworkAgent from './Pages/HomeworkAgent.jsx'
+import KnowledgeQA from './Pages/KnowledgeQA.jsx'
+import Feedback from './Pages/Feedback.jsx'
+import StudyProgress from './Pages/StudyProgress.jsx'
 
 // 登录和注册页面组件   
 const AuthPage = () => {
@@ -121,7 +125,10 @@ export default function App() {
                     <Route path='/homework/photo-search' element={<PhotoSearch />}></Route>
                     <Route path='/homework/question-analysis' element={<QuestionAnalysis />}></Route>
                     <Route path='/homework/study-record' element={<StudyRecord />}></Route>
+                    <Route path='/homework/agent' element={<HomeworkAgent />}></Route>
                     <Route path='/voice-interaction' element={<VoiceInteraction />}></Route>
+                    <Route path='/knowledge-qa' element={<KnowledgeQA />}></Route>
+                    <Route path='/study-progress' element={<StudyProgress />}></Route>
 
                 </Route>
                 <Route path='/accountsetting' element={<AccountSetting />}></Route>
@@ -129,6 +136,7 @@ export default function App() {
                 <Route path='/my-content' element={<MyContentPage />}></Route>
                 <Route path='/notification-setting' element={<NotificationSetting />}></Route>
                 <Route path='/help-center' element={<HelpCenter />}></Route>
+                <Route path='/feedback' element={<Feedback />}></Route>
             </Routes>
         </BrowserRouter>
     )

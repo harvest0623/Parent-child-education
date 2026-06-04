@@ -1,0 +1,161 @@
+# 英语日常对话
+
+## 问候与告别
+
+### 问候
+- Hello! / Hi! - 你好！
+- Good morning! - 早上好！
+- Good afternoon! - 下午好！
+- Good evening! - 晚上好！
+- How are you? - 你好吗？
+- I'm fine, thank you. And you? - 我很好，谢谢。你呢？
+- Nice to meet you. - 很高兴认识你。
+
+### 告别
+- Goodbye! / Bye! - 再见！
+- See you later! - 回头见！
+- See you tomorrow! - 明天见！
+- Take care! - 保重！
+- Have a nice day! - 祝你今天愉快！
+
+## 自我介绍
+
+### 基本句型
+- My name is... - 我的名字是...
+- I'm ... years old. - 我...岁了。
+- I'm from... - 我来自...
+- I'm a student. - 我是一名学生。
+- I like... - 我喜欢...
+
+### 示例对话
+A: Hello! What's your name?
+   你好！你叫什么名字？
+B: My name is Tom. What's your name?
+   我叫汤姆。你叫什么名字？
+A: I'm Lucy. Nice to meet you.
+   我是露西。很高兴认识你。
+B: Nice to meet you too.
+   我也很高兴认识你。
+
+## 问路与指路
+
+### 问路
+- Excuse me, where is...? - 打扰一下，...在哪里？
+- How can I get to...? - 我怎么去...？
+- Is there a... near here? - 这附近有...吗？
+
+### 指路
+- Go straight. - 直走。
+- Turn left/right. - 向左/右转。
+- It's on your left/right. - 在你的左/右边。
+- It's next to... - 在...旁边。
+- It's opposite... - 在...对面。
+
+### 示例对话
+A: Excuse me, where is the library?
+   打扰一下，图书馆在哪里？
+B: Go straight and turn left. It's on your right.
+   直走然后左转。在你的右边。
+A: Thank you!
+   谢谢！
+B: You're welcome!
+   不客气！
+
+## 购物
+
+### 询问价格
+- How much is this? - 这个多少钱？
+- What's the price? - 价格是多少？
+- Is there any discount? - 有折扣吗？
+
+### 表达喜好
+- I like this one. - 我喜欢这个。
+- I don't like this one. - 我不喜欢这个。
+- Can I try it on? - 我可以试穿吗？
+- Do you have a smaller/bigger size? - 有小/大一号的吗？
+
+### 示例对话
+A: Can I help you?
+   我能帮你吗？
+B: Yes, I'm looking for a T-shirt.
+   是的，我在找一件T恤。
+A: What color do you like?
+   你喜欢什么颜色？
+B: I like blue.
+   我喜欢蓝色。
+A: Here you are. It's 50 yuan.
+   给你。50元。
+B: Thank you. I'll take it.
+   谢谢。我买了。
+
+## 餐厅点餐
+
+### 点餐
+- I'd like... - 我想要...
+- Can I have...? - 我可以要...吗？
+- What do you recommend? - 你推荐什么？
+- I'm allergic to... - 我对...过敏。
+
+### 用餐
+- This is delicious! - 这太好吃了！
+- Can I have some water, please? - 请给我一些水。
+- The bill, please. - 请买单。
+
+### 示例对话
+A: Are you ready to order?
+   你准备好点餐了吗？
+B: Yes, I'd like a hamburger and a glass of juice.
+   是的，我想要一个汉堡和一杯果汁。
+A: Anything else?
+   还要别的吗？
+B: No, thanks.
+   不用了，谢谢。
+A: Here you are.
+   给你。
+B: Thank you. This is delicious!
+   谢谢。这太好吃了！
+
+## 询问时间
+
+### 询问
+- What time is it? - 几点了？
+- What's the time? - 几点了？
+
+### 回答
+- It's... o'clock. - 现在...点。
+- It's half past... - 现在...点半。
+- It's a quarter to/past... - 现在差/过...一刻钟。
+
+### 示例对话
+A: What time is it?
+   几点了？
+B: It's three o'clock.
+   三点了。
+A: Thank you!
+   谢谢！
+B: You're welcome!
+   不客气！
+
+## 天气
+
+### 询问天气
+- What's the weather like today? - 今天天气怎么样？
+- How's the weather? - 天气怎么样？
+
+### 描述天气
+- It's sunny. - 天气晴朗。
+- It's cloudy. - 多云。
+- It's rainy. - 下雨。
+- It's windy. - 刮风。
+- It's snowy. - 下雪。
+- It's hot/cold. - 天气热/冷。
+
+### 示例对话
+A: What's the weather like today?
+   今天天气怎么样？
+B: It's sunny and warm.
+   天气晴朗温暖。
+A: Let's go to the park!
+   我们去公园吧！
+B: Good idea!
+   好主意！

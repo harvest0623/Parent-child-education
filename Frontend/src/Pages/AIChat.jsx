@@ -1,6 +1,6 @@
 import '../Styles/AIChat.less'
 import { useState, useRef, useEffect } from 'react'
-import { DotLoading } from 'antd-mobile'
+import { DotLoading, Toast } from 'antd-mobile'
 import axios from '../Http';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ class HandleMessages {
     }
 
     initMessages = () => {
-        this.messages.push(this.createMessage(Date.now(), 'ai', '你好，我是智能对话助手，有什么我可以帮助你的吗？', new Date().toLocaleString()));
+        this.messages.push(this.createMessage(Date.now(), 'ai', '你好，我是智能对话助手"小智"，有什么我可以帮助你的吗？', new Date().toLocaleString()));
     }
 
     addMessage = (message) => {
@@ -22,7 +22,21 @@ class HandleMessages {
     }
 
     getMessages = () => this.messages;
+
+    clearMessages = () => {
+        this.messages = [];
+    }
 }
+
+// 生成或获取会话ID
+const getOrCreateSessionId = () => {
+    let sessionId = localStorage.getItem('langchain_session_id');
+    if (!sessionId) {
+        sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        localStorage.setItem('langchain_session_id', sessionId);
+    }
+    return sessionId;
+};
 
 export default function AiChat() {
     const [flag, setFlag] = useState(0);
@@ -31,6 +45,7 @@ export default function AiChat() {
     const [isRecording, setIsRecording] = useState(false);
     const inputRef = useRef(null);
     const navigate = useNavigate();
+    const sessionIdRef = useRef(getOrCreateSessionId());
 
     useEffect(() => {
         msg.current = new HandleMessages();
@@ -51,14 +66,106 @@ export default function AiChat() {
         setFlag(flag + 1);
         inputRef.current.value = '';
 
-        // 向后端发送请求
-        setIsLoading(true);
-        const res = await axios.post('/api/deepseek/chat', {
-            message: content
-        })
-        const aiMessage = msg.current.createMessage(Date.now(), 'ai', res.data.message, new Date());
+        // 创建AI消息占位符
+        const aiMessageId = Date.now() + 1;
+        const aiMessage = msg.current.createMessage(aiMessageId, 'ai', '', new Date());
         msg.current.addMessage(aiMessage);
-        setIsLoading(false);
+        setFlag(flag + 1);
+
+        // 使用SSE流式请求
+        setIsLoading(true);
+        try {
+            const token = localStorage.getItem('token');
+            const response = await fetch('/api/langchain/stream-chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                },
+                body: JSON.stringify({
+                    message: content,
+                    sessionId: sessionIdRef.current,
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error('请求失败');
+            }
+
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let buffer = '';
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+
+                buffer += decoder.decode(value, { stream: true });
+                const lines = buffer.split('\n');
+                buffer = lines.pop() || '';
+
+                for (const line of lines) {
+                    if (line.startsWith('data: ')) {
+                        try {
+                            const data = JSON.parse(line.slice(6));
+                            
+                            if (data.type === 'chunk' && data.content) {
+                                // 更新AI消息内容
+                                const messages = msg.current.getMessages();
+                                const lastMessage = messages[messages.length - 1];
+                                if (lastMessage && lastMessage.id === aiMessageId) {
+                                    lastMessage.content += data.content;
+                                    setFlag(flag + 1);
+                                }
+                            } else if (data.type === 'end') {
+                                // 流式响应结束
+                                console.log('Stream ended');
+                            } else if (data.type === 'error') {
+                                throw new Error(data.message);
+                            }
+                        } catch (e) {
+                            console.error('Parse SSE data error:', e);
+                        }
+                    }
+                }
+            }
+        } catch (error) {
+            console.error('Stream chat error:', error);
+            Toast.show({
+                content: '对话请求失败，请稍后重试',
+                position: 'bottom',
+            });
+            // 移除失败的AI消息
+            const messages = msg.current.getMessages();
+            const lastIndex = messages.length - 1;
+            if (messages[lastIndex] && messages[lastIndex].id === aiMessageId) {
+                messages.pop();
+                setFlag(flag + 1);
+            }
+        } finally {
+            setIsLoading(false);
+        }
+    }
+
+    // 清除对话历史
+    const handleClearHistory = async () => {
+        try {
+            await axios.post('/api/langchain/clear', {
+                sessionId: sessionIdRef.current,
+            });
+            msg.current.clearMessages();
+            setFlag(flag + 1);
+            Toast.show({
+                content: '对话历史已清除',
+                position: 'bottom',
+            });
+        } catch (error) {
+            console.error('Clear history error:', error);
+            Toast.show({
+                content: '清除对话历史失败',
+                position: 'bottom',
+            });
+        }
     }
     
     return (
@@ -69,7 +176,7 @@ export default function AiChat() {
                 </div>
                 <h1>智能对话</h1>
                 <div className="ai-dialogue-header__more">
-                    <i className="iconfont icon-gengduo"></i>
+                    <i className="iconfont icon-shanchu" onClick={handleClearHistory}></i>
                 </div>
             </header>
 

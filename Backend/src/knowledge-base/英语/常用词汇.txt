@@ -1,0 +1,157 @@
+# 英语常用词汇
+
+## 家庭成员
+
+### 直系亲属
+- father / dad - 父亲
+- mother / mom - 母亲
+- son - 儿子
+- daughter - 女儿
+- brother - 兄弟
+- sister - 姐妹
+
+### 祖辈
+- grandfather / grandpa - 祖父
+- grandmother / grandma - 祖母
+- grandson - 孙子
+- granddaughter - 孙女
+
+### 其他亲属
+- uncle - 叔叔/舅舅
+- aunt - 阿姨/姑姑
+- cousin - 堂/表兄弟姐妹
+- nephew - 侄子/外甥
+- niece - 侄女/外甥女
+
+## 身体部位
+
+### 头部
+- head - 头
+- face - 脸
+- eye - 眼睛
+- nose - 鼻子
+- mouth - 嘴巴
+- ear - 耳朵
+- hair - 头发
+
+### 上肢
+- shoulder - 肩膀
+- arm - 手臂
+- elbow - 肘
+- wrist - 手腕
+- hand - 手
+- finger - 手指
+
+### 下肢
+- leg - 腿
+- knee - 膝盖
+- ankle - 脚踝
+- foot - 脚
+- toe - 脚趾
+
+### 躯干
+- neck - 脖子
+- chest - 胸部
+- stomach - 胃/腹部
+- back - 背部
+
+## 颜色
+
+### 基本颜色
+- red - 红色
+- blue - 蓝色
+- yellow - 黄色
+- green - 绿色
+- orange - 橙色
+- purple - 紫色
+- pink - 粉色
+- black - 黑色
+- white - 白色
+- gray / grey - 灰色
+
+### 其他颜色
+- brown - 棕色
+- gold - 金色
+- silver - 银色
+- light blue - 浅蓝色
+- dark green - 深绿色
+
+## 数字
+
+### 基数词
+1. one - 一
+2. two - 二
+3. three - 三
+4. four - 四
+5. five - 五
+6. six - 六
+7. seven - 七
+8. eight - 八
+9. nine - 九
+10. ten - 十
+
+### 序数词
+1. first - 第一
+2. second - 第二
+3. third - 第三
+4. fourth - 第四
+5. fifth - 第五
+6. sixth - 第六
+7. seventh - 第七
+8. eighth - 第八
+9. ninth - 第九
+10. tenth - 第十
+
+## 时间
+
+### 星期
+- Monday - 星期一
+- Tuesday - 星期二
+- Wednesday - 星期三
+- Thursday - 星期四
+- Friday - 星期五
+- Saturday - 星期六
+- Sunday - 星期日
+
+### 月份
+- January - 一月
+- February - 二月
+- March - 三月
+- April - 四月
+- May - 五月
+- June - 六月
+- July - 七月
+- August - 八月
+- September - 九月
+- October - 十月
+- November - 十一月
+- December - 十二月
+
+### 季节
+- spring - 春天
+- summer - 夏天
+- autumn / fall - 秋天
+- winter - 冬天
+
+## 食物
+
+### 水果
+- apple - 苹果
+- banana - 香蕉
+- orange - 橙子
+- grape - 葡萄
+- strawberry - 草莓
+- watermelon - 西瓜
+
+### 蔬菜
+- tomato - 番茄
+- potato - 土豆
+- carrot - 胡萝卜
+- onion - 洋葱
+- cabbage - 卷心菜
+
+### 主食
+- rice - 米饭
+- bread - 面包
+- noodles - 面条
+- cake - 蛋糕

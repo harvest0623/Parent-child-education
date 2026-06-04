@@ -21,6 +21,13 @@ export default function HomeworkTutor() {
             color: '#4ecdc4'
         },
         {
+            icon: 'icon-jiqirenzhushou',
+            title: 'AI 作业辅导',
+            desc: '分步讲解，难题迎刃而解',
+            path: '/homework/agent',
+            color: '#ff7a45'
+        },
+        {
             icon: 'icon-jilu',
             title: '学习记录',
             desc: '查看历史搜题，巩固复习',

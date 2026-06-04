@@ -9,12 +9,15 @@ export default function Home() {
     }, [])
 
     const quickEntries = [
-        { title: '拍照识实物', desc: '秒识身边物品，讲解用途与安全提示', tag: 'AI 识别', path: '/recognition' },
-        { title: '拍照学单词', desc: '看图记单词，语音跟读巩固记忆', tag: '英语', path: '/learn-words' },
-        { title: '古诗词天地', desc: '每日一诗，图文+朗读，助力语文启蒙', tag: '国学', path: '/learn-poem' },
-        { title: '亲子成长任务', desc: '每日 3 个小目标，亲子打卡养习惯', tag: '习惯养成', path: '/habit' },
-        { title: '睡前故事馆', desc: 'AI 讲故事，个性化选择角色与情节', tag: '故事', path: '/sleep-story' },
-        { title: '科学小实验', desc: '安全材料，动手做实验，培养好奇心', tag: '科普', path: '/science' }
+        { title: '拍照识实物', desc: '秒识身边物品，讲解用途与安全提示', tag: 'AI 识别', path: '/recognition', icon: 'icon-xiangji' },
+        { title: '拍照学单词', desc: '看图记单词，语音跟读巩固记忆', tag: '英语', path: '/learn-words', icon: 'icon-yingyu' },
+        { title: '古诗词天地', desc: '每日一诗，图文+朗读，助力语文启蒙', tag: '国学', path: '/learn-poem', icon: 'icon-shu' },
+        { title: '亲子成长任务', desc: '每日 3 个小目标，亲子打卡养习惯', tag: '习惯养成', path: '/habit', icon: 'icon-xiguan' },
+        { title: '睡前故事馆', desc: 'AI 讲故事，个性化选择角色与情节', tag: '故事', path: '/sleep-story', icon: 'icon-gushi' },
+        { title: '科学小实验', desc: '安全材料，动手做实验，培养好奇心', tag: '科普', path: '/science', icon: 'icon-kexue' },
+        { title: 'AI 作业辅导', desc: 'AI 老师分步讲解，难题迎刃而解', tag: '作业', path: '/homework/agent', icon: 'icon-jiqirenzhushou' },
+        { title: '知识问答', desc: '基于教材的精准问答，学习更高效', tag: '知识', path: '/knowledge-qa', icon: 'icon-zhishi' },
+        { title: '意见反馈', desc: '您的建议是我们改进的动力', tag: '反馈', path: '/feedback', icon: 'icon-yijianfankui' }
     ];
 
     return (
