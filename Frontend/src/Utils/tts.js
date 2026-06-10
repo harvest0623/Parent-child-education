@@ -100,6 +100,12 @@ class TTSService {
         this.utterance.onerror = (event) => {
             this.isPlaying = false;
             this.isPaused = false;
+            // 'interrupted' 是 Web Speech API 的正常中断信号，并非异常
+            // 常见于：新的 speak() 调用打断前一个、组件卸载、页面导航等
+            // 参考：https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisErrorEvent
+            if (event.error === 'interrupted' || event.error === 'canceled') {
+                return;
+            }
             console.error('TTS错误:', event.error);
             if (this.onErrorCallback) {
                 this.onErrorCallback(event.error);
