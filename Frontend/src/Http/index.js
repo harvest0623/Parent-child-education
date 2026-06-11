@@ -2,7 +2,9 @@ import axios from 'axios'
 import { Toast } from 'antd-mobile';
 
 axios.timeout = 5000;
-axios.defaults.baseURL = 'http://localhost:3000';
+// 使用相对路径 /api，配合 vite proxy 转发到后端，
+// 避免硬编码后端端口；后端真实地址在 vite.config.js 中通过 VITE_BACKEND_PORT 注入
+axios.defaults.baseURL = '';
 // axios.defaults.baseURL = 'http://47.118.25.23:3000';  // 阿里云服务器
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 

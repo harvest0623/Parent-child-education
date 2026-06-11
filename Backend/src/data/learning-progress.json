@@ -1,1 +1,33 @@
-{}
+{
+  "1": {
+    "totalStudyTime": 0,
+    "totalQuestions": 0,
+    "correctQuestions": 0,
+    "streakDays": 0,
+    "lastStudyDate": null,
+    "subjects": {
+      "数学": {
+        "studyTime": 0,
+        "questions": 0,
+        "correct": 0
+      },
+      "语文": {
+        "studyTime": 0,
+        "questions": 0,
+        "correct": 0
+      },
+      "英语": {
+        "studyTime": 0,
+        "questions": 0,
+        "correct": 0
+      },
+      "科学": {
+        "studyTime": 0,
+        "questions": 0,
+        "correct": 0
+      }
+    },
+    "achievements": [],
+    "dailyHistory": {}
+  }
+}
