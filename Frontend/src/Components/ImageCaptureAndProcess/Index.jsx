@@ -31,6 +31,14 @@ export default function Index({
             voice: '#4caf50',
             gradient: ['#00B894', '#00D2A0'],
             gradientSoft: ['#e8f5e8', '#fff3e0']
+        },
+        purple: {
+            primary: '#6C5CE7',
+            secondary: '#f5f5f5',
+            loading: '#6C5CE7',
+            voice: '#6C5CE7',
+            gradient: ['#6C5CE7', '#8E7BFF'],
+            gradientSoft: ['#ece9ff', '#f3efff']
         }
     };
     const currentTheme = themeConfig[theme] || themeConfig.default;

@@ -41,7 +41,7 @@ export default function LearnWords() {
 
     return (
         <ImageCaptureAndProcess 
-            theme="green"
+            theme="purple"
             title="拍照学单词"
             onRecognition={realRecognition}
         >
