@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 // Coze API 基础配置
-const COZE_API_BASE_URL = 'https://38bmgxjghx.coze.site/run';
+const COZE_API_BASE_URL = 'https://z2sjhbyckh.coze.site/run';
 const COZE_HOMEWORK_URL = 'https://vjgdp8mm43.coze.site/run';
 
 async function recognition(ctx) {
@@ -26,12 +26,15 @@ async function recognition(ctx) {
             data: res.data
         }
     } catch (error) {
-        console.error('Coze recognition error:', error.response?.data || error.message);
+        const upstreamStatus = error.response?.status;
+        const upstreamData = error.response?.data;
+        console.error('Coze recognition error:', upstreamData || error.message);
 
-        ctx.status = 500
+        // 透传 Coze 的 HTTP 状态码，便于前端识别具体错误（如 401/403/429 等）
+        ctx.status = upstreamStatus && upstreamStatus >= 400 && upstreamStatus < 600 ? upstreamStatus : 500;
         ctx.body = {
             code: 0,
-            message: error.response?.data?.message || error.message
+            message: upstreamData?.msg || upstreamData?.message || error.message
         }
     }
 }
@@ -95,12 +98,14 @@ async function sleepStory(ctx) {
             data: res.data
         };
     } catch (error) {
-        console.error('Coze sleepStory error:', error.response?.data || error.message);
+        const upstreamStatus = error.response?.status;
+        const upstreamData = error.response?.data;
+        console.error('Coze sleepStory error:', upstreamData || error.message);
 
-        ctx.status = 500;
+        ctx.status = upstreamStatus && upstreamStatus >= 400 && upstreamStatus < 600 ? upstreamStatus : 500;
         ctx.body = {
             code: 0,
-            message: error.response?.data?.message || '生成故事失败，请重试'
+            message: upstreamData?.msg || upstreamData?.message || '生成故事失败，请重试'
         };
     }
 }
@@ -130,12 +135,14 @@ async function homeworkSearch(ctx) {
             data: res.data
         };
     } catch (error) {
-        console.error('Coze homeworkSearch error:', error.response?.data || error.message);
+        const upstreamStatus = error.response?.status;
+        const upstreamData = error.response?.data;
+        console.error('Coze homeworkSearch error:', upstreamData || error.message);
 
-        ctx.status = 500;
+        ctx.status = upstreamStatus && upstreamStatus >= 400 && upstreamStatus < 600 ? upstreamStatus : 500;
         ctx.body = {
             code: 0,
-            message: error.response?.data?.message || '搜题失败，请重试'
+            message: upstreamData?.msg || upstreamData?.message || '搜题失败，请重试'
         };
     }
 }
